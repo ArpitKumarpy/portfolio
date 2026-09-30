@@ -1,0 +1,22 @@
+# ============================================================================
+# Git Ignore Configuration
+# Arpit Kumar Portfolio
+# ============================================================================
+
+# Sensitive API Keys & Config (Web3Forms access keys, tokens)
+js/config.js
+config.js
+secrets.js
+.env
+.env.*
+*.local
+
+# Backups
+_backup_original/
+_backup_before_modular/
+
+# Dependency directories & OS metadata
+node_modules/
+.DS_Store
+Thumbs.db
+*.log

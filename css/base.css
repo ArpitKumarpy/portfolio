@@ -1,0 +1,303 @@
+/* ============================================================================
+   BASE & FOUNDATION STYLES
+   Design System tokens, canvas container, effect layer, background accents
+   ============================================================================ */
+
+/* ============================================
+   DESIGN SYSTEM — Arpit's Portfolio
+   Inspired by personal art & Same Skin VN
+   ============================================ */
+:root {
+  --bg: #030306;
+  --magenta: #E8198B;
+  --magenta-dim: rgba(232, 25, 139, 0.15);
+  --teal: #2EC4B6;
+  --teal-dim: rgba(46, 196, 182, 0.12);
+  --gold: #FFB830;
+  --olive: #5C6B2E;
+  --panel-bg: rgba(8, 8, 14, 0.88);
+  --panel-border: rgba(232, 25, 139, 0.55);
+  --prompt-pink: #FF4DAA;
+  --text-white: #F0EBF4;
+  --text-dim: rgba(240, 235, 244, 0.45);
+  --font-hand: "Caveat", cursive;
+  --font-body: "Space Grotesk", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 30% 40%, rgba(232, 25, 139, 0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 70% 65%, rgba(46, 196, 182, 0.04) 0%, transparent 50%),
+    var(--bg);
+  color: var(--text-white);
+  font-family: var(--font-body);
+}
+
+/* Halftone dot overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(3, 3, 6, 0.3) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================ CANVAS ============================================ */
+#canvas-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+#canvas-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ============================================ UI LAYER ============================================ */
+#ui-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ============================================ EFFECT LAYER ============================================ */
+#effect-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.speed-lines {
+  position: absolute;
+  inset: -30%;
+  background: repeating-conic-gradient(from 0deg,
+      transparent 0deg, transparent 7.5deg,
+      rgba(232, 25, 139, 0.018) 7.5deg, rgba(232, 25, 139, 0.018) 8deg);
+  animation: spin-lines 30s linear infinite;
+  transform-origin: center;
+  border-radius: 50%;
+}
+
+@keyframes spin-lines {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Floating hand-written labels */
+.float-text {
+  position: absolute;
+  font-family: var(--font-hand);
+  white-space: nowrap;
+  animation: float-drift var(--dur, 8s) ease-in-out infinite alternate;
+}
+
+.ft-1 {
+  top: 12%;
+  left: 7%;
+  font-size: 1.25rem;
+  color: rgba(232, 25, 139, 0.45);
+  --dur: 7s;
+}
+
+.ft-2 {
+  top: 68%;
+  left: 4%;
+  font-size: 1rem;
+  color: rgba(46, 196, 182, 0.4);
+  --dur: 9s;
+  animation-delay: 1s;
+}
+
+.ft-3 {
+  top: 33%;
+  left: 2%;
+  font-size: 0.9rem;
+  color: rgba(240, 235, 244, 0.28);
+  --dur: 6s;
+  animation-delay: 2s;
+}
+
+.ft-4 {
+  top: 82%;
+  left: 10%;
+  font-size: 1.1rem;
+  color: rgba(255, 184, 48, 0.55);
+  --dur: 10s;
+  animation-delay: 0.5s;
+}
+
+.ft-5 {
+  top: 4%;
+  left: 22%;
+  font-size: 0.85rem;
+  color: rgba(240, 235, 244, 0.22);
+  --dur: 8s;
+  animation-delay: 3s;
+}
+
+.ft-6 {
+  top: 55%;
+  left: 1%;
+  font-size: 0.8rem;
+  color: rgba(46, 196, 182, 0.25);
+  --dur: 11s;
+  animation-delay: 1.5s;
+}
+
+@keyframes float-drift {
+  from {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  to {
+    transform: translateY(-14px) rotate(2deg);
+  }
+}
+
+/* Static sparkle stars */
+.static-star {
+  position: absolute;
+  animation: sparkle-pulse var(--p, 3s) ease-in-out infinite;
+}
+
+.s1 {
+  top: 18%;
+  left: 43%;
+  color: var(--magenta);
+  font-size: 1.6rem;
+  --p: 2.5s;
+}
+
+.s2 {
+  top: 8%;
+  left: 57%;
+  color: var(--gold);
+  font-size: 1rem;
+  --p: 3.5s;
+  animation-delay: 0.8s;
+}
+
+.s3 {
+  top: 76%;
+  left: 46%;
+  color: var(--teal);
+  font-size: 0.8rem;
+  --p: 4s;
+  animation-delay: 1.2s;
+}
+
+.s4 {
+  top: 62%;
+  left: 36%;
+  color: var(--magenta);
+  font-size: 1.3rem;
+  --p: 2s;
+  animation-delay: 0.3s;
+}
+
+.s5 {
+  top: 91%;
+  left: 49%;
+  color: var(--gold);
+  font-size: 0.9rem;
+  --p: 3s;
+  animation-delay: 2s;
+}
+
+.s6 {
+  top: 45%;
+  left: 41%;
+  color: var(--teal);
+  font-size: 0.7rem;
+  --p: 5s;
+  animation-delay: 1s;
+}
+
+@keyframes sparkle-pulse {
+
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.5) rotate(22deg);
+    opacity: 1;
+  }
+}
+
+/* Dot accents */
+.dot-accent {
+  position: absolute;
+  border-radius: 50%;
+  animation: dot-pulse 4s ease-in-out infinite;
+}
+
+.d1 {
+  width: 6px;
+  height: 6px;
+  background: var(--magenta);
+  top: 29%;
+  left: 39%;
+  animation-delay: 0s;
+}
+
+.d2 {
+  width: 4px;
+  height: 4px;
+  background: var(--teal);
+  top: 64%;
+  left: 53%;
+  animation-delay: 1.2s;
+}
+
+.d3 {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  opacity: 0.5;
+  top: 44%;
+  left: 41%;
+  animation-delay: 2.5s;
+}
+
+@keyframes dot-pulse {
+
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.6);
+  }
+}

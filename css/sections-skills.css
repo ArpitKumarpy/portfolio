@@ -1,0 +1,359 @@
+/* ============================================================================
+   SKILLS SECTION STYLES
+   Legacy Skills & Skills Stream Section, Category Cards, Chips
+   ============================================================================ */
+
+/* ============================================ SECTION: SKILLS ============================================ */
+.skills-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.skill-category {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-cat-title {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--prompt-pink);
+  border-bottom: 1px solid rgba(232, 25, 139, 0.15);
+  padding-bottom: 4px;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.skill-item {
+  animation: line-in .4s ease both;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.skill-name {
+  font-size: .83rem;
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-name::before {
+  content: "✦";
+  color: var(--gold);
+  font-size: .7rem;
+}
+
+.skill-level {
+  font-family: var(--font-hand);
+  font-size: .9rem;
+  color: var(--teal);
+}
+
+.skill-bar-bg {
+  height: 3px;
+  background: rgba(255, 255, 255, .07);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal), var(--magenta));
+  border-radius: 2px;
+  width: 0%;
+  transition: width 1.3s cubic-bezier(.25, .46, .45, .94);
+}
+
+
+/* ============================================
+   SKILLS STREAM SECTION (MODERN SUBTLE DESIGN)
+   ============================================ */
+.skills-stream-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(54vw, 760px);
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(36px);
+  transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.38s;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-stream-container.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateX(0);
+}
+
+.skills-stream-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(14, 16, 24, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-white);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skills-stream-close:hover {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: #FFD700;
+  transform: scale(1.08) rotate(90deg);
+  box-shadow: 0 0 16px rgba(255, 215, 0, 0.4);
+  color: #FFD700;
+}
+
+.skills-stream-close:active {
+  transform: scale(0.95);
+}
+
+.skills-stream-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 34px 38px 44px 16px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 215, 0, 0.28) transparent;
+}
+
+.skills-stream-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.skills-stream-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.28);
+  border-radius: 999px;
+}
+
+.skills-stream-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 215, 0, 0.6);
+}
+
+.skills-stream-header {
+  margin-bottom: 18px;
+}
+
+.skills-stream-title-main {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2.6rem, 4.4vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+  color: #FFFFFF;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.skills-stream-title-ghost {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2.6rem, 4.4vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+  color: rgba(255, 255, 255, 0.14);
+  margin: 2px 0 0 0;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.skills-stream-bio {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: rgba(240, 235, 244, 0.65);
+  margin-top: 10px;
+  max-width: 520px;
+}
+
+/* Skills Metrics Bar */
+.skills-metrics-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.skills-metric-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255, 215, 0, 0.06);
+  border: 1px solid rgba(255, 215, 0, 0.18);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.metric-icon {
+  font-size: 0.72rem;
+  color: #FFD700;
+}
+
+.metric-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.metric-lbl {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 500;
+  color: rgba(240, 235, 244, 0.65);
+}
+
+/* Skills Stream List & Category Cards */
+.skills-stream-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.skill-category-card {
+  padding: 15px 18px;
+  border-radius: 16px;
+  background: rgba(14, 16, 24, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-category-card:hover {
+  background: rgba(20, 22, 34, 0.8);
+  border-color: rgba(255, 215, 0, 0.35);
+  transform: translateX(3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 16px rgba(255, 215, 0, 0.12);
+}
+
+.skill-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.skill-cat-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-cat-icon {
+  font-size: 1.05rem;
+}
+
+.skill-cat-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.skill-cat-badge {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255, 215, 0, 0.12);
+  border: 1px solid rgba(255, 215, 0, 0.28);
+  color: #FFD700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.skill-progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 12px;
+}
+
+.skill-progress-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.skill-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: rgba(240, 235, 244, 0.85);
+}
+
+.skill-percent {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #FFD700;
+}
+
+.skill-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-fill-gold {
+  background: linear-gradient(90deg, #FFAA00 0%, #FFD700 70%, #FFF275 100%);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.45);
+}
+
+.skill-tags-row {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}

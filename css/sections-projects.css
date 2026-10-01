@@ -311,6 +311,10 @@
   border-color: rgba(255, 184, 48, 0.4);
 }
 
+.project-thumb-blue {
+  border-color: rgba(0, 240, 255, 0.45);
+}
+
 .thumb-mockup-screen {
   background: #0A0A10;
   border-radius: 12px;

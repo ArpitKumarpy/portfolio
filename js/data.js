@@ -100,7 +100,7 @@ export const DEFAULT_DATA = {
   projects: {
     titleMain: "FEATURED",
     titleGhost: "PROJECTS",
-    bio: "Markerless 3D motion capture, published assistive eye tracking, multimodal emotion AI, and Vision-Language document pipelines.",
+    bio: "Markerless 3D motion capture, assistive eye tracking, full-stack airline systems, multimodal emotion AI, and Vision-Language pipelines.",
     items: [
       {
         id: "proj-row-vidvision",
@@ -123,6 +123,17 @@ export const DEFAULT_DATA = {
         btnText: "IEEE Paper & Code ↗",
         mockupTitle: "Synapse AI",
         mockupHud: "0.9989 AUC · Eye Tracking"
+      },
+      {
+        id: "proj-row-skybook",
+        title: "SkyBook — Airline Booking & Fleet Platform",
+        badge: "Full-Stack • React & Cloud Architecture",
+        desc: "End-to-end airline booking and fleet management system featuring real-time flight search, interactive aircraft seat selection, passenger ticketing with PDF generation, and full administrative CRUD control across fleets, cabins, and schedules.",
+        tech: ["React", "JavaScript", "Vite", "Node.js", "REST APIs", "TailwindCSS", "State Management"],
+        link: "https://github.com/ArpitKumarpy/Skybook_Flights",
+        btnText: "Explore SkyBook ↗",
+        mockupTitle: "SkyBook",
+        mockupHud: "Flights · Seat Matrix"
       },
       {
         id: "proj-row-emotion",
@@ -357,7 +368,7 @@ export const DEFAULT_DATA = {
   customSections: {}
 };
 
-const PORTFOLIO_SCHEMA_VERSION = "6.0";
+const PORTFOLIO_SCHEMA_VERSION = "7.0";
 
 function loadPortfolioData() {
   try {

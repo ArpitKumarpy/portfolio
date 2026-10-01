@@ -128,7 +128,28 @@ export function setupProjectsStreamInteractions() {
     });
   }
 
-  // Row 3: Multimodal Emotion Recognition
+  // Row 3: SkyBook Flights
+  const rowSky = document.getElementById("proj-row-skybook");
+  if (rowSky) {
+    rowSky.addEventListener("click", () => {
+      const rect = rowSky.getBoundingClientRect();
+      spawnSparks(rect.left + rect.width / 2, rect.top + 30);
+      showBentoToast("✈️ SkyBook Flights: Airline Booking & Fleet Platform — Opening repository...");
+      gsap.to(tLight, { intensity: 4.2, duration: 0.3, yoyo: true, repeat: 1 });
+      if (character) {
+        gsap.killTweensOf(character.scale);
+        gsap.fromTo(character.scale,
+          { x: baseScale * 1.06, y: baseScale * 0.94, z: baseScale * 1.06 },
+          { x: baseScale, y: baseScale, z: baseScale, duration: 0.45, ease: "elastic.out(1.15, 0.4)" }
+        );
+      }
+      setTimeout(() => {
+        window.open("https://github.com/ArpitKumarpy/Skybook_Flights", "_blank");
+      }, 400);
+    });
+  }
+
+  // Row 4: Multimodal Emotion Recognition
   const rowEmo = document.getElementById("proj-row-emotion");
   if (rowEmo) {
     rowEmo.addEventListener("click", () => {

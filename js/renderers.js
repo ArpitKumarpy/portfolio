@@ -119,6 +119,25 @@ export function renderProjectsStream() {
         `
       },
       {
+        theme: 'project-thumb-blue',
+        dot: 'mockup-dot dot-teal',
+        hud: 'Flights · Seat Matrix',
+        visual: `
+          <div class="mockup-flight-grid" style="display:flex; flex-direction:column; gap:3px; width:52px; margin:auto;">
+            <div style="display:flex; justify-content:space-between; font-size:0.48rem; color:#00F0FF; font-family:monospace; line-height:1;">
+              <span>DEL</span><span>✈</span><span>BOM</span>
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(5, 7px); gap:2px; justify-content:center;">
+              <span style="width:7px; height:7px; background:rgba(0,240,255,0.4); border-radius:1px;"></span>
+              <span style="width:7px; height:7px; background:rgba(0,240,255,0.85); border-radius:1px;"></span>
+              <span style="width:7px; height:7px; background:rgba(255,184,48,0.85); border-radius:1px;"></span>
+              <span style="width:7px; height:7px; background:rgba(0,240,255,0.85); border-radius:1px;"></span>
+              <span style="width:7px; height:7px; background:rgba(0,240,255,0.4); border-radius:1px;"></span>
+            </div>
+          </div>
+        `
+      },
+      {
         theme: 'project-thumb-pink',
         dot: 'mockup-dot dot-pink',
         hud: 'Voice + Vision + NLP',
@@ -150,10 +169,10 @@ export function renderProjectsStream() {
       const tagsList = (p.tech || p.tags || []).filter(t => t !== "TestTag1");
       const tagsHtml = tagsList.map(t => `<span class="stream-tag">${t}</span>`).join("");
       const cleanTitle = p.title.replace(/\s*—\s*Markerless Motion Capture/i, "");
-      const rowId = p.id || (idx === 0 ? 'proj-row-vidvision' : (idx === 1 ? 'proj-row-synapse' : (idx === 2 ? 'proj-row-emotion' : 'proj-row-vlm')));
+      const rowId = p.id || (idx === 0 ? 'proj-row-vidvision' : (idx === 1 ? 'proj-row-synapse' : (idx === 2 ? 'proj-row-skybook' : (idx === 3 ? 'proj-row-emotion' : 'proj-row-vlm'))));
 
       return `
-        <article class="project-stream-row" id="${rowId}" role="button" tabindex="0" title="${cleanTitle}">
+        <article class="project-stream-row" id="${rowId}" data-link="${p.link || ''}" role="button" tabindex="0" title="${cleanTitle}">
           <div class="project-thumb-frame ${pv.theme}">
             <div class="thumb-mockup-screen">
               <div class="mockup-top-bar">

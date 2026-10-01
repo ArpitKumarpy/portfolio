@@ -13,6 +13,7 @@ export const POKE_QUOTES = {
   projects: [
     "VidVision3D: 80% MoCap cost reduction!",
     "Synapse: 0.9989 AUC eye tracking model!",
+    "SkyBook: Airline booking & fleet platform!",
     "BlazePose + MediaPipe + Unity 3D!",
     "*training custom CNNs on RunPod*"
   ],

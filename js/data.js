@@ -32,8 +32,8 @@ export const DEFAULT_DATA = {
       {
         id: "bento-card-education",
         badge: "EDUCATION",
-        title: "B.Tech CSE (AIML) & BS Data Science",
-        subtitle: "IMS Engineering College + IIT Madras",
+        title: "B.Tech CSE (AIML) & Online BS Data Science",
+        subtitle: "IMS Engineering College + IIT Madras (Online)",
         tag: "Dual Pursuit",
         icon: "🎓"
       },
@@ -70,7 +70,7 @@ export const DEFAULT_DATA = {
       "Engineering Leadership: Spearheaded teams across 7 national hackathons (Smart India Hackathon 2024 & Vihaan 8.0 Finalist), turning research concepts into production prototypes."
     ],
     lines: [
-      "B.Tech CSE (AI & ML) @ IMS Engineering College & BS in Data Science @ IIT Madras.",
+      "B.Tech CSE (AI & ML) @ IMS Engineering College & Online BS in Data Science @ IIT Madras.",
       "Creative Technologist building markerless 3D MoCap systems and interactive WebGL animation tools.",
       "Co-authored 'Synapse' published on Scopus IEEE Xplore NMIC 2026 (0.9989 AUC gaze estimation model).",
       "Inventor on Indian Patent App No: 202211074491 ('A Virtual Body Augmented with AI Assistant').",
@@ -81,7 +81,7 @@ export const DEFAULT_DATA = {
       { label: "Creative AI", val: "VidVision3D — 80% Cost Reduction MoCap & Puppet Studio" },
       { label: "Research", val: "Scopus IEEE Xplore NMIC 2026 Co-Author (Synapse)" },
       { label: "Patent", val: "Virtual Body Augmented with AI (App: 202211074491)" },
-      { label: "Academics", val: "B.Tech CSE (AI/ML) + IIT Madras BS Data Science" }
+      { label: "Academics", val: "B.Tech CSE (AI/ML) + IIT Madras Online BS Data Science" }
     ],
     likes: [
       "3D Motion Synthesis & Interactive WebGL",
@@ -261,18 +261,18 @@ export const DEFAULT_DATA = {
       {
         id: "exp-card-honors",
         role: "Hackathons, Education & Certifications",
-        company: "IMS Engineering College & IIT Madras",
+        company: "IMS Engineering College & IIT Madras (Online)",
         period: "2022 – 2026",
         badge: "Honors & BS",
         badgeClass: "exp-badge-honors",
         points: [
           "B.Tech CSE (AI & ML) at IMS Engineering College (CGPA: 7.04/10; 2022–2026).",
-          "Pursuing IIT Madras BS in Data Science (Passed Foundation, currently in Diploma Level).",
+          "Currently pursuing BS in Data Science & Applications online from IIT Madras (Passed Foundation, currently in Diploma Level).",
           "Senior Secondary CBSE from Greenfields Public School, Delhi (84.4%, Stream: PCM CS).",
           "Led teams across 7 national hackathons; Finalist at Smart India Hackathon (SIH 2024) and Vihaan 8.0 (DTU).",
           "British Council English C1 Advanced (577/600); Placement Coordinator; Advanced training at IIT Bombay (AI/ML) & IIT BHU (Python)."
         ],
-        tags: ["IIT Madras", "SIH 2024", "Vihaan 8.0", "C1 Advanced", "Placement Coordinator"]
+        tags: ["IIT Madras (Online)", "SIH 2024", "Vihaan 8.0", "C1 Advanced", "Placement Coordinator"]
       }
     ]
   },

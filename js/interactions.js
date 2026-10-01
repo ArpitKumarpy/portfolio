@@ -178,7 +178,7 @@ export function setupAboutBentoInteractions() {
     eduCard.addEventListener("click", () => {
       const rect = eduCard.getBoundingClientRect();
       spawnSparks(rect.left + rect.width / 2, rect.top + 30);
-      showBentoToast("🎓 Education: B.Tech CSE (AIML) & BS Data Science IIT Madras. Dedicated page coming soon!");
+      showBentoToast("🎓 Education: B.Tech CSE (AIML) & Online BS Data Science IIT Madras. Dedicated page coming soon!");
       if (character) {
         gsap.killTweensOf(character.scale);
         gsap.fromTo(character.scale,
@@ -315,7 +315,7 @@ export function setupExperienceStreamInteractions() {
     { id: "exp-card-draftine", toast: "🏢 DrafTineAI: Complex CVAT Annotation, Detectron2 & YOLOv8x" },
     { id: "exp-card-ieee", toast: "📜 Synapse Research: IEEE NMIC 2026 Scopus (0.9989 AUC Gaze Model)" },
     { id: "exp-card-patent", toast: "💡 Patent 202211074491: A Virtual Body Augmented with AI Assistant" },
-    { id: "exp-card-honors", toast: "🎓 IMS Engineering College & IIT Madras BS Data Science, SIH Finalist" }
+    { id: "exp-card-honors", toast: "🎓 IMS Engineering College & IIT Madras Online BS Data Science, SIH Finalist" }
   ];
 
   items.forEach(it => {

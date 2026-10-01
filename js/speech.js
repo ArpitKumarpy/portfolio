@@ -6,8 +6,8 @@
 export const POKE_QUOTES = {
   about: [
     "✦ hey! let's build something crazy ✦",
-    "B.Tech CSE (AI/ML) + IIT Madras DS!",
-    "*just vibes and multimodal AI*",
+    "B.Tech CSE (AI/ML) + IIT Madras Online DS!",
+    "✦ creative tech & multimodal AI ✦",
     "✦ 7 national hackathons & counting ✦"
   ],
   projects: [

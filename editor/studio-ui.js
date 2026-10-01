@@ -106,7 +106,7 @@ export function buildStudioModal() {
 
     <div class="ped-studio-body">
       <nav class="ped-sidebar">
-        <button class="ped-nav-tab active" data-pane="navigation"><span class="ped-icon">⚡</span> Buttons &amp; Navigation</button>
+        <button class="ped-nav-tab active" data-pane="navigation"><span class="ped-icon">⬡</span> Floating Round Buttons</button>
         <button class="ped-nav-tab" data-pane="tags"><span class="ped-icon">🏷</span> Universal Tags Manager</button>
         <button class="ped-nav-tab" data-pane="about"><span class="ped-icon">📄</span> About &amp; Bento Cards</button>
         <button class="ped-nav-tab" data-pane="projects"><span class="ped-icon">🚀</span> Projects &amp; Cards</button>

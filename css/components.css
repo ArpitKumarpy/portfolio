@@ -351,6 +351,162 @@
   }
 }
 
+/* Resume float button — amber accent */
+.social-float-resume {
+  border-color: rgba(255, 184, 48, 0.35) !important;
+  background: rgba(255, 184, 48, 0.07) !important;
+  color: #FFB830 !important;
+}
+.social-float-resume:hover {
+  border-color: #FFB830 !important;
+  background: rgba(255, 184, 48, 0.16) !important;
+  box-shadow: 0 0 22px rgba(255, 184, 48, 0.25), 0 6px 18px rgba(0, 0, 0, 0.35) !important;
+}
+.social-float-resume::after {
+  color: #FFB830 !important;
+  border-color: rgba(255, 184, 48, 0.35) !important;
+}
+
+/* ============================================
+   RESUME PDF VIEWER OVERLAY
+   ============================================ */
+.resume-viewer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(4, 4, 10, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.resume-viewer-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.resume-viewer-modal {
+  background: rgba(10, 10, 18, 0.97);
+  border: 1.5px solid rgba(255, 184, 48, 0.25);
+  border-radius: 18px;
+  width: min(92vw, 860px);
+  height: min(90vh, 760px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 184, 48, 0.05);
+  transform: scale(0.97) translateY(8px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.resume-viewer-overlay.active .resume-viewer-modal {
+  transform: scale(1) translateY(0);
+}
+.resume-viewer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255, 184, 48, 0.12);
+  flex-shrink: 0;
+  gap: 12px;
+}
+.resume-viewer-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(240, 235, 244, 0.9);
+  letter-spacing: 0.02em;
+}
+.resume-viewer-icon {
+  font-size: 1.15rem;
+}
+.resume-viewer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.resume-dl-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 16px;
+  background: rgba(255, 184, 48, 0.1);
+  border: 1px solid rgba(255, 184, 48, 0.35);
+  border-radius: 8px;
+  color: #FFB830;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+.resume-dl-btn:hover {
+  background: rgba(255, 184, 48, 0.18);
+  border-color: #FFB830;
+  box-shadow: 0 0 14px rgba(255, 184, 48, 0.15);
+}
+.resume-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(240, 235, 244, 0.05);
+  border: 1px solid rgba(240, 235, 244, 0.12);
+  color: rgba(240, 235, 244, 0.5);
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+.resume-close-btn:hover {
+  background: rgba(232, 25, 139, 0.12);
+  color: #E8198B;
+  border-color: rgba(232, 25, 139, 0.3);
+}
+.resume-viewer-body {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.resume-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+.resume-fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  text-align: center;
+  color: rgba(240, 235, 244, 0.5);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 24px;
+}
+
+/* Resume card highlight in contact grid */
+.contact-mini-card-resume {
+  border-color: rgba(255, 184, 48, 0.3) !important;
+}
+.contact-mini-card-resume:hover {
+  background: rgba(255, 184, 48, 0.06) !important;
+  border-color: rgba(255, 184, 48, 0.55) !important;
+}
+
 /* ============================================ INFO PANEL — VN DIALOGUE BOX ============================================ */
 #info-panel {
   position: absolute;

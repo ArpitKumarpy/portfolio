@@ -81,46 +81,56 @@ import { showToast } from "./studio-ui.js";
 
 
   function renderNavigationPane(container) {
-    const sections = activeData.sections || [];
     if (!activeData.contact) activeData.contact = {};
-    if (!activeData.contact.form) activeData.contact.form = {};
-    if (!activeData.about) activeData.about = {};
-    if (!activeData.about.bentoCards) activeData.about.bentoCards = [];
+    if (!activeData.contact.links) activeData.contact.links = [];
+    const links = activeData.contact.links;
 
     container.innerHTML = `
       <div class="ped-pane active">
         <div class="ped-pane-header">
           <div>
-            <h3>Navigation Buttons &amp; Action Labels</h3>
-            <p>Customize every floating navigation pill, symbols, and interactive action buttons.</p>
+            <h3>Floating Round Buttons (Social Dock)</h3>
+            <p>Manage the circular icon buttons docked below the 3D model — add, reorder, or remove. Each button has a symbol (SVG or emoji), a tooltip label, a destination link, and an optional type.</p>
           </div>
-          <button class="ped-btn ped-btn-primary ped-btn-sm" id="ped-add-section-btn">+ Add Section Button</button>
+          <button class="ped-btn ped-btn-primary ped-btn-sm" id="ped-add-social-btn">+ Add Button</button>
         </div>
 
-        <div class="ped-items-list" id="ped-sections-list">
-          ${sections.map((sec, idx) => `
+        <div class="ped-items-list" id="ped-socials-list">
+          ${links.map((lk, idx) => `
             <div class="ped-item-card" data-idx="${idx}">
               <div class="ped-item-card-header">
                 <div class="ped-item-card-title">
-                  <span style="color: #00F5D4; font-size: 1.1rem;">${sec.icon || '✦'}</span>
-                  <span>${sec.label}</span>
-                  <span style="font-size: 0.7rem; color: rgba(240,235,244,0.4); font-family: monospace;">(#${sec.id})</span>
+                  <span style="color: #00F5D4; font-size:1.1rem;">⬡</span>
+                  <span>${lk.label || 'Button'}</span>
+                  ${lk.type === 'resume' ? `<span style="font-size:0.68rem; background:rgba(255,184,48,0.18); color:#FFB830; border-radius:6px; padding:2px 7px; font-family:monospace;">📄 Resume</span>` : ''}
+                  <span style="font-size:0.68rem; color:rgba(240,235,244,0.35); font-family:monospace;">#${idx + 1}</span>
                 </div>
                 <div class="ped-item-tools">
-                  ${idx > 0 ? `<button class="ped-tool-btn ped-sec-up" data-idx="${idx}">↑ Up</button>` : ''}
-                  ${idx < sections.length - 1 ? `<button class="ped-tool-btn ped-sec-down" data-idx="${idx}">↓ Down</button>` : ''}
-                  <button class="ped-tool-btn ped-btn-danger ped-sec-del" data-idx="${idx}">✕ Delete</button>
+                  ${idx > 0 ? `<button class="ped-tool-btn ped-nav-soc-up" data-idx="${idx}">↑ Up</button>` : ''}
+                  ${idx < links.length - 1 ? `<button class="ped-tool-btn ped-nav-soc-down" data-idx="${idx}">↓ Down</button>` : ''}
+                  <button class="ped-tool-btn ped-btn-danger ped-nav-soc-del" data-idx="${idx}">✕ Delete</button>
                 </div>
               </div>
+
               <div class="ped-form-row">
                 <div class="ped-form-group">
-                  <label class="ped-label">Button Title / Label</label>
-                  <input type="text" class="ped-input ped-sec-label" data-idx="${idx}" value="${sec.label || ''}" />
+                  <label class="ped-label">Tooltip Label (shown on hover)</label>
+                  <input type="text" class="ped-input ped-nav-soc-label" data-idx="${idx}" value="${lk.label || ''}" placeholder="e.g. GitHub, LinkedIn, Resume" />
                 </div>
                 <div class="ped-form-group">
-                  <label class="ped-label">Symbol / Icon</label>
-                  <input type="text" class="ped-input ped-sec-icon" data-idx="${idx}" value="${sec.icon || ''}" placeholder="e.g. ✦, ◈, ⚡, 💼, ✉" />
+                  <label class="ped-label">Type (leave blank or type "resume" for PDF viewer)</label>
+                  <input type="text" class="ped-input ped-nav-soc-type" data-idx="${idx}" value="${lk.type || ''}" placeholder="resume  (or blank for normal link)" />
                 </div>
+              </div>
+
+              <div class="ped-form-group">
+                <label class="ped-label">Destination URL / href</label>
+                <input type="text" class="ped-input ped-nav-soc-href" data-idx="${idx}" value="${lk.href || ''}" placeholder="https://... or mailto:... or ./assets/resume.pdf" />
+              </div>
+
+              <div class="ped-form-group">
+                <label class="ped-label">Icon (SVG markup or emoji — paste full SVG tag or a single emoji)</label>
+                <textarea class="ped-input ped-nav-soc-icon" data-idx="${idx}" rows="2" placeholder="<svg viewBox='0 0 24 24' ...>...</svg>  or  🔗">${(lk.icon || '').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</textarea>
               </div>
             </div>
           `).join("")}
@@ -128,76 +138,92 @@ import { showToast } from "./studio-ui.js";
 
         <div class="ped-pane-header" style="margin-top: 28px; padding-bottom: 6px;">
           <div>
-            <h3>Global Action Button Texts</h3>
-            <p>Configure action button labels across all interactive stream sections.</p>
+            <h3>Section Pill Labels &amp; Icons</h3>
+            <p>Edit the labels and symbols for each floating navigation pill on the left.</p>
           </div>
         </div>
-
-        <div class="ped-form-row">
-          <div class="ped-form-group">
-            <label class="ped-label">Contact "Send Direct Message" Button Label</label>
-            <input type="text" class="ped-input" id="ped-contact-submit-btn-text" value="${activeData.contact.form.submitBtnText || 'Send Direct Message'}" />
-          </div>
-          <div class="ped-form-group">
-            <label class="ped-label">About Bento Project Card Action Tag</label>
-            <input type="text" class="ped-input" id="ped-about-card4-tag" value="${(activeData.about.bentoCards[3] && activeData.about.bentoCards[3].tag) || 'Live Repo ↗'}" />
-          </div>
+        <div class="ped-items-list" id="ped-pills-list">
+          ${(activeData.sections || []).map((sec, idx) => `
+            <div class="ped-item-card" data-idx="${idx}" style="padding: 14px 16px;">
+              <div class="ped-form-row">
+                <div class="ped-form-group">
+                  <label class="ped-label">Icon  <span style="color:#2EC4B6;">${sec.icon || '✦'}</span></label>
+                  <input type="text" class="ped-input ped-pill-icon" data-idx="${idx}" value="${sec.icon || ''}" placeholder="✦ ◈ ⚡ 💼 ✉" />
+                </div>
+                <div class="ped-form-group">
+                  <label class="ped-label">Label  <span style="color:rgba(240,235,244,0.5); font-size:0.75rem;">(#${sec.id})</span></label>
+                  <input type="text" class="ped-input ped-pill-label" data-idx="${idx}" value="${sec.label || ''}" />
+                </div>
+              </div>
+            </div>
+          `).join("")}
         </div>
       </div>
     `;
 
-    container.querySelectorAll(".ped-sec-label").forEach(inp => {
-      inp.addEventListener("input", (e) => sections[e.target.dataset.idx].label = e.target.value);
+    // Floating social dock handlers
+    container.querySelectorAll(".ped-nav-soc-label").forEach(inp => {
+      inp.addEventListener("input", (e) => links[e.target.dataset.idx].label = e.target.value);
     });
-    container.querySelectorAll(".ped-sec-icon").forEach(inp => {
-      inp.addEventListener("input", (e) => sections[e.target.dataset.idx].icon = e.target.value);
+    container.querySelectorAll(".ped-nav-soc-href").forEach(inp => {
+      inp.addEventListener("input", (e) => links[e.target.dataset.idx].href = e.target.value);
     });
-    container.querySelectorAll(".ped-sec-up").forEach(btn => {
+    container.querySelectorAll(".ped-nav-soc-type").forEach(inp => {
+      inp.addEventListener("input", (e) => {
+        const val = e.target.value.trim().toLowerCase();
+        links[e.target.dataset.idx].type = val || undefined;
+      });
+    });
+    container.querySelectorAll(".ped-nav-soc-icon").forEach(inp => {
+      inp.addEventListener("input", (e) => {
+        links[e.target.dataset.idx].icon = e.target.value.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+      });
+    });
+    container.querySelectorAll(".ped-nav-soc-up").forEach(btn => {
       btn.addEventListener("click", () => {
         const i = parseInt(btn.dataset.idx);
-        const temp = sections[i];
-        sections[i] = sections[i - 1];
-        sections[i - 1] = temp;
+        [links[i], links[i - 1]] = [links[i - 1], links[i]];
         renderActivePane();
       });
     });
-    container.querySelectorAll(".ped-sec-down").forEach(btn => {
+    container.querySelectorAll(".ped-nav-soc-down").forEach(btn => {
       btn.addEventListener("click", () => {
         const i = parseInt(btn.dataset.idx);
-        const temp = sections[i];
-        sections[i] = sections[i + 1];
-        sections[i + 1] = temp;
+        [links[i], links[i + 1]] = [links[i + 1], links[i]];
         renderActivePane();
       });
     });
-    container.querySelectorAll(".ped-sec-del").forEach(btn => {
+    container.querySelectorAll(".ped-nav-soc-del").forEach(btn => {
       btn.addEventListener("click", () => {
         const i = parseInt(btn.dataset.idx);
-        if (confirm(`Delete button "${sections[i].label}"?`)) {
-          sections.splice(i, 1);
+        if (confirm(`Remove "${links[i].label}" button?`)) {
+          links.splice(i, 1);
           renderActivePane();
         }
       });
     });
-    container.querySelector("#ped-add-section-btn").addEventListener("click", () => {
-      const label = prompt("Enter button label:", "New Section");
-      if (!label) return;
-      const id = label.toLowerCase().replace(/[^a-z0-9]/g, "-") || `sec-${Date.now()}`;
-      sections.push({ id, label, icon: "✦" });
+    container.querySelector("#ped-add-social-btn").addEventListener("click", () => {
+      links.push({
+        label: "New Button",
+        href: "https://",
+        icon: `<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>`
+      });
       renderActivePane();
     });
 
-    const contactSubmitInp = document.getElementById("ped-contact-submit-btn-text");
-    if (contactSubmitInp) {
-      contactSubmitInp.addEventListener("input", (e) => activeData.contact.form.submitBtnText = e.target.value);
-    }
-    const card4TagInp = document.getElementById("ped-about-card4-tag");
-    if (card4TagInp) {
-      card4TagInp.addEventListener("input", (e) => {
-        if (activeData.about.bentoCards[3]) activeData.about.bentoCards[3].tag = e.target.value;
+    // Pill label/icon handlers
+    container.querySelectorAll(".ped-pill-label").forEach(inp => {
+      inp.addEventListener("input", (e) => {
+        if (activeData.sections[e.target.dataset.idx]) activeData.sections[e.target.dataset.idx].label = e.target.value;
       });
-    }
+    });
+    container.querySelectorAll(".ped-pill-icon").forEach(inp => {
+      inp.addEventListener("input", (e) => {
+        if (activeData.sections[e.target.dataset.idx]) activeData.sections[e.target.dataset.idx].icon = e.target.value;
+      });
+    });
   }
+
 
   // 2. Universal Tags Manager Pane
   function renderTagsPane(container) {

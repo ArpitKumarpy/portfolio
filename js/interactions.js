@@ -157,7 +157,7 @@ export function setupProjectsStreamInteractions() {
   }
 
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && isProjectsSectionOpen) {
+    if (e.key === "Escape" && document.body.classList.contains("projects-open")) {
       closeProjectsSection();
     }
   });
@@ -245,7 +245,7 @@ export function setupAboutBentoInteractions() {
   }
 
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && isAboutSectionOpen) {
+    if (e.key === "Escape" && document.body.classList.contains("about-open")) {
       closeAboutSection();
     }
   });
@@ -292,7 +292,7 @@ export function setupSkillsStreamInteractions() {
   });
 
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && isSkillsSectionOpen) {
+    if (e.key === "Escape" && document.body.classList.contains("skills-open")) {
       closeSkillsSection();
     }
   });
@@ -337,7 +337,7 @@ export function setupExperienceStreamInteractions() {
   });
 
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && isExperienceSectionOpen) {
+    if (e.key === "Escape" && document.body.classList.contains("experience-open")) {
       closeExperienceSection();
     }
   });
@@ -485,7 +485,7 @@ export function setupContactStreamInteractions() {
   }
 
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && isContactSectionOpen) {
+    if (e.key === "Escape" && document.body.classList.contains("contact-open")) {
       closeContactSection();
     }
   });

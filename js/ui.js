@@ -90,21 +90,98 @@ export function buildFloatingSocials() {
   if (!ctr || !DATA.contact || !DATA.contact.links) return;
   ctr.innerHTML = "";
   DATA.contact.links.forEach((lk) => {
-    const a = document.createElement("a");
-    a.className = "social-float-btn";
-    a.href = lk.href;
-    a.target = "_blank";
-    a.rel = "noopener";
-    a.setAttribute("data-label", lk.label);
-    a.setAttribute("aria-label", lk.label);
-    a.innerHTML = lk.icon;
-    a.addEventListener("mouseenter", () => {
-      gsap.to(cardHoverGazeOffset, { y: 0.18, x: 0.06, duration: 0.3 });
-    });
-    a.addEventListener("mouseleave", () => {
-      gsap.to(cardHoverGazeOffset, { y: 0, x: 0, duration: 0.4 });
-    });
-    ctr.appendChild(a);
+    if (lk.type === "resume") {
+      // Resume button — opens an inline PDF viewer overlay
+      const btn = document.createElement("button");
+      btn.className = "social-float-btn social-float-resume";
+      btn.setAttribute("data-label", lk.label || "Resume");
+      btn.setAttribute("aria-label", lk.label || "Resume");
+      btn.innerHTML = lk.icon;
+      btn.addEventListener("click", () => openResumePdfViewer(lk.href));
+      btn.addEventListener("mouseenter", () => {
+        gsap.to(cardHoverGazeOffset, { y: 0.18, x: 0.06, duration: 0.3 });
+      });
+      btn.addEventListener("mouseleave", () => {
+        gsap.to(cardHoverGazeOffset, { y: 0, x: 0, duration: 0.4 });
+      });
+      ctr.appendChild(btn);
+    } else {
+      const a = document.createElement("a");
+      a.className = "social-float-btn";
+      a.href = lk.href;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.setAttribute("data-label", lk.label);
+      a.setAttribute("aria-label", lk.label);
+      a.innerHTML = lk.icon;
+      a.addEventListener("mouseenter", () => {
+        gsap.to(cardHoverGazeOffset, { y: 0.18, x: 0.06, duration: 0.3 });
+      });
+      a.addEventListener("mouseleave", () => {
+        gsap.to(cardHoverGazeOffset, { y: 0, x: 0, duration: 0.4 });
+      });
+      ctr.appendChild(a);
+    }
+  });
+}
+
+// ============================================
+// RESUME PDF VIEWER OVERLAY
+// ============================================
+export function openResumePdfViewer(pdfUrl) {
+  const existing = document.getElementById("resume-viewer-overlay");
+  if (existing) {
+    existing.classList.add("active");
+    return;
+  }
+
+  const overlay = document.createElement("div");
+  overlay.id = "resume-viewer-overlay";
+  overlay.className = "resume-viewer-overlay";
+  overlay.innerHTML = `
+    <div class="resume-viewer-modal">
+      <div class="resume-viewer-header">
+        <div class="resume-viewer-title">
+          <span class="resume-viewer-icon">📄</span>
+          <span>Arpit Kumar — Resume / CV</span>
+        </div>
+        <div class="resume-viewer-actions">
+          <a class="resume-dl-btn" href="${pdfUrl}" download="Arpit_Kumar_Resume.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-14 9v2h14v-2H5z"/></svg>
+            Download PDF
+          </a>
+          <button class="resume-close-btn" id="resume-viewer-close" aria-label="Close resume viewer">✕</button>
+        </div>
+      </div>
+      <div class="resume-viewer-body">
+        <iframe src="${pdfUrl}" class="resume-iframe" title="Resume PDF" allow="fullscreen"></iframe>
+        <div class="resume-fallback">
+          <p>Can't display the PDF inline?</p>
+          <a href="${pdfUrl}" target="_blank" rel="noopener" class="resume-dl-btn">Open in new tab ↗</a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+  requestAnimationFrame(() => overlay.classList.add("active"));
+
+  overlay.querySelector("#resume-viewer-close").addEventListener("click", () => {
+    overlay.classList.remove("active");
+    setTimeout(() => overlay.remove(), 320);
+  });
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove("active");
+      setTimeout(() => overlay.remove(), 320);
+    }
+  });
+  document.addEventListener("keydown", function escHandler(e) {
+    if (e.key === "Escape") {
+      overlay.classList.remove("active");
+      setTimeout(() => overlay.remove(), 320);
+      document.removeEventListener("keydown", escHandler);
+    }
   });
 }
 

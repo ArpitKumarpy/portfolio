@@ -128,40 +128,84 @@ export function buildFloatingSocials() {
 // ============================================
 // RESUME PDF VIEWER OVERLAY
 // ============================================
-export function openResumePdfViewer(pdfUrl) {
+export async function openResumePdfViewer(pdfUrl) {
+  // Remove any lingering overlay first
   const existing = document.getElementById("resume-viewer-overlay");
-  if (existing) {
-    existing.classList.add("active");
-    return;
+  if (existing) existing.remove();
+
+  // Check if the PDF actually exists
+  let pdfExists = false;
+  try {
+    const res = await fetch(pdfUrl, { method: "HEAD" });
+    pdfExists = res.ok;
+  } catch (_) {
+    pdfExists = false;
   }
 
   const overlay = document.createElement("div");
   overlay.id = "resume-viewer-overlay";
   overlay.className = "resume-viewer-overlay";
-  overlay.innerHTML = `
-    <div class="resume-viewer-modal">
-      <div class="resume-viewer-header">
-        <div class="resume-viewer-title">
-          <span class="resume-viewer-icon">📄</span>
-          <span>Arpit Kumar — Resume / CV</span>
+
+  if (pdfExists) {
+    overlay.innerHTML = `
+      <div class="resume-viewer-modal">
+        <div class="resume-viewer-header">
+          <div class="resume-viewer-title">
+            <span class="resume-viewer-icon">📄</span>
+            <span>Arpit Kumar — Resume / CV</span>
+          </div>
+          <div class="resume-viewer-actions">
+            <a class="resume-dl-btn" href="${pdfUrl}" download="Arpit_Kumar_Resume.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-14 9v2h14v-2H5z"/></svg>
+              Download PDF
+            </a>
+            <button class="resume-close-btn" id="resume-viewer-close" aria-label="Close resume viewer">✕</button>
+          </div>
         </div>
-        <div class="resume-viewer-actions">
-          <a class="resume-dl-btn" href="${pdfUrl}" download="Arpit_Kumar_Resume.pdf" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-14 9v2h14v-2H5z"/></svg>
-            Download PDF
-          </a>
-          <button class="resume-close-btn" id="resume-viewer-close" aria-label="Close resume viewer">✕</button>
+        <div class="resume-viewer-body">
+          <iframe src="${pdfUrl}" class="resume-iframe" title="Resume PDF" allow="fullscreen"></iframe>
         </div>
       </div>
-      <div class="resume-viewer-body">
-        <iframe src="${pdfUrl}" class="resume-iframe" title="Resume PDF" allow="fullscreen"></iframe>
-        <div class="resume-fallback">
-          <p>Can't display the PDF inline?</p>
-          <a href="${pdfUrl}" target="_blank" rel="noopener" class="resume-dl-btn">Open in new tab ↗</a>
+    `;
+  } else {
+    // Resume not uploaded yet — show a polished "updating" state
+    overlay.innerHTML = `
+      <div class="resume-viewer-modal resume-modal-updating">
+        <div class="resume-viewer-header">
+          <div class="resume-viewer-title">
+            <span class="resume-viewer-icon">📄</span>
+            <span>Arpit Kumar — Resume / CV</span>
+          </div>
+          <div class="resume-viewer-actions">
+            <button class="resume-close-btn" id="resume-viewer-close" aria-label="Close resume viewer">✕</button>
+          </div>
+        </div>
+        <div class="resume-updating-body">
+          <div class="resume-updating-icon">
+            <svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="12" y1="18" x2="12" y2="12"/>
+              <line x1="9" y1="15" x2="15" y2="15"/>
+            </svg>
+          </div>
+          <h3 class="resume-updating-title">Resume is Currently Updating</h3>
+          <p class="resume-updating-sub">A fresh version is being prepared. Check back shortly — it'll be worth the wait.</p>
+          <div class="resume-updating-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="resume-updating-links">
+            <a href="https://www.linkedin.com/in/arpitkumar-105309262" target="_blank" rel="noopener" class="resume-dl-btn">
+              View LinkedIn Profile ↗
+            </a>
+            <a href="https://github.com/ArpitKumarpy" target="_blank" rel="noopener" class="resume-dl-btn resume-dl-btn-ghost">
+              GitHub Portfolio ↗
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  `;
+    `;
+  }
 
   document.body.appendChild(overlay);
   requestAnimationFrame(() => overlay.classList.add("active"));
@@ -183,6 +227,7 @@ export function openResumePdfViewer(pdfUrl) {
       document.removeEventListener("keydown", escHandler);
     }
   });
+
 }
 
 // ============================================

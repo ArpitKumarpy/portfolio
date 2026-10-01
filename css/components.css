@@ -507,6 +507,85 @@
   border-color: rgba(255, 184, 48, 0.55) !important;
 }
 
+/* Ghost variant of the download button */
+.resume-dl-btn-ghost {
+  background: transparent !important;
+  border-color: rgba(240, 235, 244, 0.18) !important;
+  color: rgba(240, 235, 244, 0.55) !important;
+}
+.resume-dl-btn-ghost:hover {
+  background: rgba(240, 235, 244, 0.06) !important;
+  border-color: rgba(240, 235, 244, 0.35) !important;
+  color: rgba(240, 235, 244, 0.85) !important;
+  box-shadow: none !important;
+}
+
+/* Resume "Currently Updating" modal body */
+.resume-modal-updating {
+  height: auto !important;
+  max-height: min(90vh, 480px);
+}
+.resume-updating-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 40px 32px 44px;
+  text-align: center;
+}
+.resume-updating-icon {
+  color: rgba(255, 184, 48, 0.6);
+  animation: resume-float 3s ease-in-out infinite;
+}
+@keyframes resume-float {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50%       { transform: translateY(-8px); opacity: 1; }
+}
+.resume-updating-title {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgba(240, 235, 244, 0.92);
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+.resume-updating-sub {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  color: rgba(240, 235, 244, 0.45);
+  max-width: 340px;
+  line-height: 1.55;
+  margin: 0;
+}
+/* Animated loading dots */
+.resume-updating-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.resume-updating-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 184, 48, 0.5);
+  animation: resume-dot-pulse 1.4s ease-in-out infinite;
+}
+.resume-updating-dots span:nth-child(2) { animation-delay: 0.2s; }
+.resume-updating-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes resume-dot-pulse {
+  0%, 80%, 100% { transform: scale(0.7); opacity: 0.35; }
+  40%           { transform: scale(1.1); opacity: 1; }
+}
+.resume-updating-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 6px;
+}
+
 /* ============================================ INFO PANEL — VN DIALOGUE BOX ============================================ */
 #info-panel {
   position: absolute;

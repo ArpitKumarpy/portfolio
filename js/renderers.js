@@ -164,12 +164,20 @@ export function renderProjectsStream() {
       }
     ];
 
+    const previewMap = {
+      'proj-row-skybook': previews[2],
+      'proj-row-synapse': previews[1],
+      'proj-row-vidvision': previews[0],
+      'proj-row-emotion': previews[3],
+      'proj-row-vlm': previews[4]
+    };
+
     list.innerHTML = items.map((p, idx) => {
-      const pv = previews[idx % previews.length];
+      const cleanTitle = p.title.replace(/\s*—\s*Markerless Motion Capture/i, "");
+      const rowId = p.id || (cleanTitle.toLowerCase().includes("skybook") ? 'proj-row-skybook' : (cleanTitle.toLowerCase().includes("synapse") ? 'proj-row-synapse' : (cleanTitle.toLowerCase().includes("vidvision") ? 'proj-row-vidvision' : (cleanTitle.toLowerCase().includes("emotion") ? 'proj-row-emotion' : 'proj-row-vlm'))));
+      const pv = previewMap[rowId] || previews[idx % previews.length];
       const tagsList = (p.tech || p.tags || []).filter(t => t !== "TestTag1");
       const tagsHtml = tagsList.map(t => `<span class="stream-tag">${t}</span>`).join("");
-      const cleanTitle = p.title.replace(/\s*—\s*Markerless Motion Capture/i, "");
-      const rowId = p.id || (idx === 0 ? 'proj-row-vidvision' : (idx === 1 ? 'proj-row-synapse' : (idx === 2 ? 'proj-row-skybook' : (idx === 3 ? 'proj-row-emotion' : 'proj-row-vlm'))));
 
       const deployedUrl = (p.deployedUrl || "").trim();
       const githubUrl = (p.githubUrl || (p.link && p.link.includes("github") ? p.link : "")).trim();

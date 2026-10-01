@@ -39,7 +39,7 @@ export const DEFAULT_DATA = {
       },
       {
         id: "bento-card-experience",
-        badge: "CREATIVE ENGINEERING",
+        badge: "INTERESTS & EXPERIENCES",
         title: "Creative Tech & 3D Kinematics",
         subtitle: "3D Motion Synthesis, Interactive WebGL & Kinetic Rigging",
         tag: "Creative AI",
@@ -47,7 +47,7 @@ export const DEFAULT_DATA = {
       },
       {
         id: "bento-card-achievements",
-        badge: "PATENTS & RESEARCH",
+        badge: "ACHIEVEMENTS",
         title: "Scopus IEEE NMIC & Indian Patent",
         subtitle: "0.9989 AUC Gaze Model & AI Virtual Body App: 202211074491",
         tag: "Scopus & IPO",
@@ -55,12 +55,12 @@ export const DEFAULT_DATA = {
       },
       {
         id: "bento-card-creative",
-        badge: "CREATIVE PROJECT",
-        title: "VidVision3D",
-        subtitle: "Markerless 3D MoCap & Puppet Studio",
-        tag: "Live Repo ↗",
+        badge: "LATEST PROJECT",
+        title: "SkyBook",
+        subtitle: "Complex Airline Booking & Flight Management System",
+        tag: "Live Demo ↗",
         icon: "🚀",
-        link: "https://github.com/ArpitKumarpy/VidVision3D1"
+        link: "https://skybook-flights.onrender.com"
       }
     ],
     summaryBullets: [
@@ -103,17 +103,17 @@ export const DEFAULT_DATA = {
     bio: "Markerless 3D motion capture, assistive eye tracking, full-stack airline systems, multimodal emotion AI, and Vision-Language pipelines.",
     items: [
       {
-        id: "proj-row-vidvision",
-        title: "VidVision3D — Markerless Motion Capture",
-        badge: "Featured • 3D MoCap & Kinematics",
-        desc: "Client-side motion capture and animation platform converting monocular video and webcam streams into interactive 3D skeletal armatures (.BVH export for Blender/Unity/Unreal) and 2D kinematic puppet rigs. Engineered with Three.js, BlazePose, and React, eliminating cloud dependencies and cutting animation costs by 80% for indie creators.",
-        tech: ["BlazePose", "MediaPipe", "Three.js", "React", "TypeScript", "Unity 3D", "Python", "BVH Export"],
-        githubUrl: "https://github.com/ArpitKumarpy/VidVision3D1",
-        deployedUrl: "",
-        link: "https://github.com/ArpitKumarpy/VidVision3D1",
-        btnText: "Explore VidVision3D ↗",
-        mockupTitle: "VidVision3D",
-        mockupHud: "3D MoCap · Three.js"
+        id: "proj-row-skybook",
+        title: "SkyBook — Airline Booking & Fleet Platform",
+        badge: "Full-Stack • React & Cloud Architecture",
+        desc: "End-to-end airline booking and fleet management system featuring real-time flight search, interactive aircraft seat selection, passenger ticketing with PDF generation, and full administrative CRUD control across fleets, cabins, and schedules.",
+        tech: ["React", "JavaScript", "Vite", "Node.js", "REST APIs", "TailwindCSS", "State Management"],
+        githubUrl: "https://github.com/ArpitKumarpy/Skybook_Flights",
+        deployedUrl: "https://skybook-flights.onrender.com",
+        link: "https://skybook-flights.onrender.com",
+        btnText: "Explore SkyBook ↗",
+        mockupTitle: "SkyBook",
+        mockupHud: "Flights · Seat Matrix"
       },
       {
         id: "proj-row-synapse",
@@ -122,24 +122,24 @@ export const DEFAULT_DATA = {
         desc: "Co-authored privacy-first, browser-native assistive reading platform for dyslexic users. Features real-time iris tracking via MediaPipe, an XGBoost cognitive difficulty prediction model trained on the ZuCo dataset (0.9989 AUC via behavioral gaze features), dynamic typographic scaffolding, and text-to-speech within a unified React/TypeScript architecture.",
         tech: ["Eye Tracking", "XGBoost", "IEEE Xplore", "ZuCo Dataset", "MediaPipe", "React", "TypeScript"],
         githubUrl: "https://github.com/ArpitKumarpy/Dyslexia",
-        deployedUrl: "",
-        link: "https://github.com/ArpitKumarpy/Dyslexia",
+        deployedUrl: "https://dyslexia-alpha.vercel.app/",
+        link: "https://dyslexia-alpha.vercel.app/",
         btnText: "Explore Synapse ↗",
         mockupTitle: "Synapse AI",
         mockupHud: "0.9989 AUC · Eye Tracking"
       },
       {
-        id: "proj-row-skybook",
-        title: "SkyBook — Airline Booking & Fleet Platform",
-        badge: "Full-Stack • React & Cloud Architecture",
-        desc: "End-to-end airline booking and fleet management system featuring real-time flight search, interactive aircraft seat selection, passenger ticketing with PDF generation, and full administrative CRUD control across fleets, cabins, and schedules.",
-        tech: ["React", "JavaScript", "Vite", "Node.js", "REST APIs", "TailwindCSS", "State Management"],
-        githubUrl: "https://github.com/ArpitKumarpy/Skybook_Flights",
-        deployedUrl: "",
-        link: "https://github.com/ArpitKumarpy/Skybook_Flights",
-        btnText: "Explore SkyBook ↗",
-        mockupTitle: "SkyBook",
-        mockupHud: "Flights · Seat Matrix"
+        id: "proj-row-vidvision",
+        title: "VidVision3D — Markerless Motion Capture",
+        badge: "Featured • 3D MoCap & Kinematics",
+        desc: "Client-side motion capture and animation platform converting monocular video and webcam streams into interactive 3D skeletal armatures (.BVH export for Blender/Unity/Unreal) and 2D kinematic puppet rigs. Engineered with Three.js, BlazePose, and React, eliminating cloud dependencies and cutting animation costs by 80% for indie creators.",
+        tech: ["BlazePose", "MediaPipe", "Three.js", "React", "TypeScript", "Unity 3D", "Python", "BVH Export"],
+        githubUrl: "https://github.com/ArpitKumarpy/VidVision3D1",
+        deployedUrl: "https://vid-vision3-d1.vercel.app/",
+        link: "https://vid-vision3-d1.vercel.app/",
+        btnText: "Explore VidVision3D ↗",
+        mockupTitle: "VidVision3D",
+        mockupHud: "3D MoCap · Three.js"
       },
       {
         id: "proj-row-emotion",
@@ -378,7 +378,7 @@ export const DEFAULT_DATA = {
   customSections: {}
 };
 
-const PORTFOLIO_SCHEMA_VERSION = "8.0";
+const PORTFOLIO_SCHEMA_VERSION = "9.0";
 
 function loadPortfolioData() {
   try {
@@ -405,7 +405,7 @@ function loadPortfolioData() {
       }
       // If schema version is outdated or absent (e.g. from prototype testing), refresh cleanly to current DEFAULT_DATA
       if (!parsed._schemaVersion || parsed._schemaVersion !== PORTFOLIO_SCHEMA_VERSION) {
-        try { localStorage.removeItem("arpit_portfolio_data"); } catch (_) {}
+        try { localStorage.removeItem("arpit_portfolio_data"); } catch (_) { }
         const fresh = JSON.parse(JSON.stringify(DEFAULT_DATA));
         fresh._schemaVersion = PORTFOLIO_SCHEMA_VERSION;
         return fresh;

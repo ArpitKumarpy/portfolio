@@ -256,13 +256,13 @@ export function setupAboutBentoInteractions() {
     });
   }
 
-  // Card 4: Latest Ongoing Project (VidVision3D)
+  // Card 4: Latest Ongoing Project (SkyBook)
   const projectCard = document.getElementById("bento-card-creative");
   if (projectCard) {
     projectCard.addEventListener("click", () => {
       const rect = projectCard.getBoundingClientRect();
       spawnSparks(rect.left + rect.width / 2, rect.top + 30);
-      showBentoToast("🚀 VidVision3D: Markerless 3D Motion Capture — Opening repository...");
+      showBentoToast("✈️ SkyBook Flights: Airline Booking & Fleet Platform — Opening live app...");
       if (projectsScanner) {
         projectsScanner.visible = true;
         gsap.killTweensOf(projectsScanner.scale);
@@ -277,7 +277,8 @@ export function setupAboutBentoInteractions() {
         );
       }
       setTimeout(() => {
-        window.open("https://github.com/ArpitKumarpy/VidVision3D1", "_blank");
+        const dest = (DATA.about && DATA.about.bentoCards && DATA.about.bentoCards[3] && DATA.about.bentoCards[3].link) || "https://skybook-flights.onrender.com";
+        window.open(dest, "_blank");
       }, 450);
     });
   }

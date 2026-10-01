@@ -56,6 +56,18 @@ export function renderAboutBento() {
     if (nameEl && c.title) nameEl.textContent = c.title;
     const subEl = prjCard.querySelector(".bento-project-subtitle");
     if (subEl && c.subtitle) subEl.textContent = c.subtitle;
+    const linkUrl = c.link || "https://skybook-flights.onrender.com";
+    prjCard.dataset.link = linkUrl;
+    const labelEl = prjCard.querySelector(".bento-project-link-label");
+    if (labelEl) {
+      if (labelEl.tagName.toLowerCase() === "a") labelEl.href = linkUrl;
+      const textSpan = labelEl.querySelector("span:last-child") || labelEl;
+      if (c.tag) textSpan.textContent = c.tag;
+    }
+    const arrowLink = prjCard.querySelector(".bento-btn-arrow");
+    if (arrowLink && arrowLink.tagName && arrowLink.tagName.toLowerCase() === "a") {
+      arrowLink.href = linkUrl;
+    }
   }
 
   const list = container.querySelector(".bento-summary-list");

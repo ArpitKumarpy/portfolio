@@ -153,8 +153,8 @@ export const DEFAULT_DATA = {
         btnText: "Explore Emotion AI ↗",
         mockupTitle: "Emotion AI",
         mockupHud: "Voice + Vision + NLP"
-      },
-      {
+      }
+      /*{
         id: "proj-row-vlm",
         title: "Vision-Language Document Intelligence",
         badge: "Industry • LLMs & VLMs",
@@ -166,7 +166,7 @@ export const DEFAULT_DATA = {
         btnText: "Explore Document AI ↗",
         mockupTitle: "Document AI",
         mockupHud: "LayoutLMV3 · QWEN3"
-      }
+      }*/
     ]
   },
   skills: {
@@ -278,7 +278,7 @@ export const DEFAULT_DATA = {
           "Designed architecture bridging spatial avatars with contextual real-time intelligence."
         ],
         tags: ["Patent", "3D Avatar", "AI Assistant", "Sensory Fusion", "Virtual Embodiment"]
-      },
+      }/*,
       {
         id: "exp-card-honors",
         role: "Hackathons, Education & Certifications",
@@ -294,7 +294,7 @@ export const DEFAULT_DATA = {
           "British Council English C1 Advanced (577/600); Placement Coordinator; Advanced training at IIT Bombay (AI/ML) & IIT BHU (Python)."
         ],
         tags: ["IIT Madras (Online)", "SIH 2024", "Vihaan 8.0", "C1 Advanced", "Placement Coordinator"]
-      }
+      }*/
     ]
   },
   contact: {
@@ -378,7 +378,7 @@ export const DEFAULT_DATA = {
   customSections: {}
 };
 
-const PORTFOLIO_SCHEMA_VERSION = "9.0";
+const PORTFOLIO_SCHEMA_VERSION = "10.0";
 
 function loadPortfolioData() {
   try {

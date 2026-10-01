@@ -34,6 +34,7 @@ import {
   experienceConstellation
 } from "./holograms.js";
 import { POKE_QUOTES, spawnDialoguePop } from "./speech.js";
+import { DATA } from "./data.js";
 import { WEB3FORMS_ACCESS_KEY } from "./config.js";
 import {
   currentSection,
@@ -259,7 +260,9 @@ export function setupAboutBentoInteractions() {
   // Card 4: Latest Ongoing Project (SkyBook)
   const projectCard = document.getElementById("bento-card-creative");
   if (projectCard) {
-    projectCard.addEventListener("click", () => {
+    projectCard.addEventListener("click", (e) => {
+      const isLinkClick = e.target.closest("a");
+      const dest = projectCard.dataset.link || (DATA.about && DATA.about.bentoCards && DATA.about.bentoCards[3] && DATA.about.bentoCards[3].link) || "https://skybook-flights.onrender.com";
       const rect = projectCard.getBoundingClientRect();
       spawnSparks(rect.left + rect.width / 2, rect.top + 30);
       showBentoToast("✈️ SkyBook Flights: Airline Booking & Fleet Platform — Opening live app...");
@@ -276,10 +279,11 @@ export function setupAboutBentoInteractions() {
           { x: baseScale, y: baseScale, z: baseScale, duration: 0.45, ease: "elastic.out(1.15, 0.4)" }
         );
       }
-      setTimeout(() => {
-        const dest = (DATA.about && DATA.about.bentoCards && DATA.about.bentoCards[3] && DATA.about.bentoCards[3].link) || "https://skybook-flights.onrender.com";
-        window.open(dest, "_blank");
-      }, 450);
+      if (!isLinkClick) {
+        setTimeout(() => {
+          window.open(dest, "_blank");
+        }, 450);
+      }
     });
   }
 

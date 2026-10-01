@@ -5,9 +5,9 @@
 
 export const DEFAULT_DATA = {
   name: "Arpit Kumar",
-  pageTitle: "Arpit Kumar — AI/ML & Computer Vision Developer",
+  pageTitle: "Arpit Kumar — Creative Technologist & AI/ML Engineer",
   nameTitleSrc: "./assets/nametitle.png",
-  tagline: "AI/ML & Computer Vision Developer · 3D Motion, VLMs & Multimodal Intelligence",
+  tagline: "Creative Technologist & AI/ML Engineer · 3D Motion, Computer Vision & Multimodal Systems",
   sections: [
     { id: "about", label: "About", icon: "✦" },
     { id: "projects", label: "Projects", icon: "◈" },
@@ -16,22 +16,22 @@ export const DEFAULT_DATA = {
     { id: "contact", label: "Contact", icon: "✉" }
   ],
   ambientTexts: [
-    { id: "ft-1", text: "*just vibes*" },
-    { id: "ft-2", text: "vision models →" },
-    { id: "ft-3", text: "late nights zzz" },
-    { id: "ft-4", text: "✦ 3D motion ✦" },
-    { id: "ft-5", text: "training epochs..." },
-    { id: "ft-6", text: "still optimizing" }
+    { id: "ft-1", text: "✦ 3D motion synthesis ✦" },
+    { id: "ft-2", text: "computer vision →" },
+    { id: "ft-3", text: "creative technology" },
+    { id: "ft-4", text: "✦ neural perception ✦" },
+    { id: "ft-5", text: "interactive webgl..." },
+    { id: "ft-6", text: "multimodal intelligence" }
   ],
   about: {
     titleMain: "ABOUT",
     titleGhost: "ME",
-    intro: "Hey! I'm Arpit. I engineer computer vision pipelines, train deep learning architectures, and build interactive 3D systems that bridge machine perception with human motion.",
-    bio: "AI/ML Engineer specializing in Computer Vision, 3D Motion Capture, and Multimodal Intelligence. Research published on IEEE Xplore, national patent inventor, and 7-time hackathon contender.",
+    intro: "Creative Technologist and AI Engineer bridging machine perception with interactive digital expression. Driven by 3D kinematics, computer vision, and human-centered design, I build intelligent systems that empower digital artists, independent animators, and assistive platforms to transform raw data into living motion.",
+    bio: "Creative Technologist and AI Engineer bridging machine perception with interactive digital expression. Driven by 3D kinematics, computer vision, and human-centered design, I build intelligent systems that empower digital artists, independent animators, and assistive platforms to transform raw data into living motion.",
     bentoCards: [
       {
         id: "bento-card-education",
-        badge: "Degree & College",
+        badge: "EDUCATION",
         title: "B.Tech CSE (AIML) & BS Data Science",
         subtitle: "IMS Engineering College + IIT Madras",
         tag: "Dual Pursuit",
@@ -39,62 +39,62 @@ export const DEFAULT_DATA = {
       },
       {
         id: "bento-card-experience",
-        badge: "Work & Timeline",
-        title: "Botter Solutions & DrafTineAI",
-        subtitle: "Vision-Language Models, CVAT & Detectron2",
-        tag: "Industry AI",
-        icon: "💼"
+        badge: "CREATIVE ENGINEERING",
+        title: "Creative Tech & 3D Kinematics",
+        subtitle: "3D Motion Synthesis, Interactive WebGL & Kinetic Rigging",
+        tag: "Creative AI",
+        icon: "🎨"
       },
       {
         id: "bento-card-achievements",
-        badge: "Patents & Research",
-        title: "Scopus IEEE NMIC & Patent App",
-        subtitle: "0.9989 AUC Gaze Model & 3D AI Body",
+        badge: "PATENTS & RESEARCH",
+        title: "Scopus IEEE NMIC & Indian Patent",
+        subtitle: "0.9989 AUC Gaze Model & AI Virtual Body App: 202211074491",
         tag: "Scopus & IPO",
         icon: "📜"
       },
       {
         id: "bento-card-creative",
-        badge: "Ongoing Project",
-        title: "VidVision3D: 3D MoCap",
-        subtitle: "Markerless Pose Extraction from Video",
+        badge: "CREATIVE PROJECT",
+        title: "VidVision3D",
+        subtitle: "Markerless 3D MoCap & Puppet Studio",
         tag: "Live Repo ↗",
         icon: "🚀",
         link: "https://github.com/ArpitKumarpy/VidVision3D1"
       }
     ],
     summaryBullets: [
-      "Specialized in 3D Motion Capture, BlazePose & MediaPipe pipelines with 80% production cost reduction.",
-      "Co-authored 'Synapse' research published on IEEE Xplore (NMIC 2026) for cognitive gaze estimation.",
-      "Inventor on Indian Patent App No: 202211074491 ('A Virtual Body Augmented with AI Assistant').",
-      "Experienced with PyTorch, TensorFlow, LayoutLMV3, QWEN3, and GPU clustering on RunPod.io."
+      "Creative Toolchains: Architect of VidVision3D, democratizing motion capture for digital artists, animators, and game developers without proprietary hardware.",
+      "Assistive Perception: Co-authored Scopus IEEE Xplore research (Synapse), fusing iris tracking and cognitive load modeling (0.9989 AUC) with adaptive typography.",
+      "Applied Machine Learning: Hands-on experience fine-tuning Vision-Language Models (LayoutLMV3, QWEN3) and deploying spatial vision models (Detectron2, YOLOv8x) across GPU clusters.",
+      "Engineering Leadership: Spearheaded teams across 7 national hackathons (Smart India Hackathon 2024 & Vihaan 8.0 Finalist), turning research concepts into production prototypes."
     ],
     lines: [
       "B.Tech CSE (AI & ML) @ IMS Engineering College & BS in Data Science @ IIT Madras.",
-      "Published Researcher: Co-authored 'Synapse' (Scopus IEEE Xplore NMIC 2026 — 0.9989 AUC gaze model).",
-      "Patent Inventor: 'A Virtual Body Augmented with AI Assistant' (App No: 202211074491).",
-      "Creator of VidVision3D: markerless 3D motion capture & stick-frame animation directly from video.",
-      "Led teams across 7 national hackathons (Smart India Hackathon 2024 & Vihaan 8.0 Finalist).",
-      "Late nights experimenting with VLMs, optimizing CUDA kernels, and drinking coffee."
+      "Creative Technologist building markerless 3D MoCap systems and interactive WebGL animation tools.",
+      "Co-authored 'Synapse' published on Scopus IEEE Xplore NMIC 2026 (0.9989 AUC gaze estimation model).",
+      "Inventor on Indian Patent App No: 202211074491 ('A Virtual Body Augmented with AI Assistant').",
+      "Industry experience fine-tuning VLMs (LayoutLMV3, QWEN3) and deploying Detectron2/YOLOv8x vision models.",
+      "Led teams across 7 national hackathons (Smart India Hackathon 2024 & Vihaan 8.0 DTU Finalist)."
     ],
     highlights: [
-      { label: "Research", val: "Scopus IEEE Xplore NMIC 2026 Co-Author" },
-      { label: "Patent", val: "Virtual Body Augmented with AI (202211074491)" },
-      { label: "Degrees", val: "B.Tech CSE (AI/ML) + IIT Madras BS Data Science" },
-      { label: "MoCap", val: "VidVision3D — 80% Cost Reduction MoCap Pipeline" }
+      { label: "Creative AI", val: "VidVision3D — 80% Cost Reduction MoCap & Puppet Studio" },
+      { label: "Research", val: "Scopus IEEE Xplore NMIC 2026 Co-Author (Synapse)" },
+      { label: "Patent", val: "Virtual Body Augmented with AI (App: 202211074491)" },
+      { label: "Academics", val: "B.Tech CSE (AI/ML) + IIT Madras BS Data Science" }
     ],
     likes: [
-      "Computer Vision & 3D Pose Tracking",
-      "Markerless MoCap & BlazePose",
-      "Fine-tuning VLMs & Document AI",
-      "Interactive 3D Web & Three.js",
-      "Late-night hackathons & building things that feel alive"
+      "3D Motion Synthesis & Interactive WebGL",
+      "Markerless MoCap & Computer Vision",
+      "Creative Tooling for Independent Artists",
+      "Multimodal AI & Assistive Interfaces",
+      "Rapid Prototyping & Hackathon Team Leadership"
     ],
     dislikes: [
-      "Expensive motion capture suits",
-      "CUDA out-of-memory errors",
-      "Data leakage across subject folds",
-      "Black-box AI without interpretability"
+      "Prohibitive hardware barriers for digital creators",
+      "Uninterpretable black-box models",
+      "Fragile inference pipelines with high latency",
+      "Data leakage across validation folds"
     ]
   },
   projects: {
@@ -105,20 +105,20 @@ export const DEFAULT_DATA = {
       {
         id: "proj-row-vidvision",
         title: "VidVision3D — Markerless Motion Capture",
-        badge: "Featured • CV & 3D",
-        desc: "Engineered an accessible 3D motion capture system using real-time video processing. Extracts 3D landmarks (body, hands, pose) from video with MediaPipe & BlazePose. Backed by a Flask pipeline with React frontend and Unity 3D export—slashing animation production costs by 80% for indie creators.",
-        tech: ["BlazePose", "MediaPipe", "Python", "Flask", "React", "Unity 3D", "OpenCV"],
+        badge: "Featured • 3D MoCap & Kinematics",
+        desc: "Client-side motion capture and animation platform converting monocular video and webcam streams into interactive 3D skeletal armatures (.BVH export for Blender/Unity/Unreal) and 2D kinematic puppet rigs. Engineered with Three.js, BlazePose, and React, eliminating cloud dependencies and cutting animation costs by 80% for indie creators.",
+        tech: ["BlazePose", "MediaPipe", "Three.js", "React", "TypeScript", "Unity 3D", "Python", "BVH Export"],
         link: "https://github.com/ArpitKumarpy/VidVision3D1",
         btnText: "Explore VidVision3D ↗",
         mockupTitle: "VidVision3D",
-        mockupHud: "3D MoCap · MediaPipe"
+        mockupHud: "3D MoCap · Three.js"
       },
       {
         id: "proj-row-synapse",
         title: "Synapse: Multimodal Assistive Reading System",
         badge: "IEEE Xplore Scopus 2026",
-        desc: "Co-authored a privacy-first, serverless assistive reading platform for dyslexic users. Features a tokenized contentEditable DOM surface, dynamic typographic scaffolding, dual-mode TTS, and eye-tracking difficulty prediction using the ZuCo dataset (0.9989 AUC with GPU-accelerated XGBoost).",
-        tech: ["Eye Tracking", "XGBoost", "IEEE Xplore", "ZuCo Dataset", "MediaPipe", "Python", "React"],
+        desc: "Co-authored privacy-first, browser-native assistive reading platform for dyslexic users. Features real-time iris tracking via MediaPipe, an XGBoost cognitive difficulty prediction model trained on the ZuCo dataset (0.9989 AUC via behavioral gaze features), dynamic typographic scaffolding, and text-to-speech within a unified React/TypeScript architecture.",
+        tech: ["Eye Tracking", "XGBoost", "IEEE Xplore", "ZuCo Dataset", "MediaPipe", "React", "TypeScript"],
         link: "https://github.com/ArpitKumarpy",
         btnText: "IEEE Paper & Code ↗",
         mockupTitle: "Synapse AI",
@@ -127,9 +127,9 @@ export const DEFAULT_DATA = {
       {
         id: "proj-row-emotion",
         title: "Multimodal Emotion Recognition System",
-        badge: "Deep Learning • Audio/Vision/NLP",
-        desc: "Real-time AI system detecting human emotions by fusing voice, facial expressions, and text. Trained a custom CNN on RAVDESS with Librosa MFCC spectral features on TensorFlow 2.10 (CUDA 11.2/cuDNN 8.1), fusing Wav2Vec2, DeepFace, OpenCV, and Transformers into an ultra-low-latency pipeline.",
-        tech: ["Deep Learning", "Wav2Vec2", "TensorFlow", "DeepFace", "OpenCV", "PyTorch"],
+        badge: "Deep Learning • Audio / Vision / NLP",
+        desc: "Real-time AI system detecting human emotions by fusing voice, facial expressions, and textual signals. Trained a custom CNN on the RAVDESS dataset with Librosa MFCC and spectral features on TensorFlow 2.10 (CUDA 11.2/cuDNN 8.1), fusing Wav2Vec2, DeepFace, OpenCV, and Transformers into a GPU-accelerated low-latency pipeline.",
+        tech: ["TensorFlow 2.10", "PyTorch", "Wav2Vec2", "DeepFace", "OpenCV", "Librosa", "CUDA"],
         link: "https://github.com/ArpitKumarpy",
         btnText: "Explore Project ↗",
         mockupTitle: "Emotion AI",
@@ -137,10 +137,10 @@ export const DEFAULT_DATA = {
       },
       {
         id: "proj-row-vlm",
-        title: "AI & Vision-Language Document Intelligence",
+        title: "Vision-Language Document Intelligence",
         badge: "Industry • LLMs & VLMs",
-        desc: "Fine-tuned and evaluated Vision-Language Models and document intelligence architectures (LayoutLMV3, QWEN3, CascadeTabNet, TableLLM, PaddleOCR-VL). Curated high-precision datasets on CVAT and managed cloud GPU training clusters on RunPod.io.",
-        tech: ["VLMs", "LayoutLMV3", "QWEN3", "RunPod GPU", "CVAT", "PaddleOCR"],
+        desc: "Research and evaluation pipeline for multimodal Vision-Language Models and document intelligence (LayoutLMV3, QWEN3, CascadeTabNet, TableLLM, PaddleOCR-VL). Curated high-precision architectural and tabular datasets using CVAT, and managed distributed cloud GPU training clusters on RunPod.io.",
+        tech: ["VLMs", "LayoutLMV3", "QWEN3", "RunPod.io", "CVAT", "PaddleOCR-VL", "Detectron2"],
         link: "https://github.com/ArpitKumarpy",
         btnText: "GitHub Profile ↗",
         mockupTitle: "Document AI",
@@ -153,8 +153,8 @@ export const DEFAULT_DATA = {
     titleGhost: "SKILLS",
     bio: "Specialized in Computer Vision, 3D Pose Estimation, Deep Learning, and Cloud GPU Workflows.",
     metrics: [
-      { icon: "✦", val: "95%", lbl: "Max Proficiency" },
-      { icon: "◈", val: "12+", lbl: "AI/CV Frameworks" },
+      { icon: "✦", val: "95%", lbl: "Pose Estimation & CV" },
+      { icon: "◈", val: "14+", lbl: "AI/CV & 3D Frameworks" },
       { icon: "⚡", val: "CUDA", lbl: "GPU Accelerated" }
     ],
     categories: [
@@ -176,23 +176,23 @@ export const DEFAULT_DATA = {
         badge: "Deep Learning",
         icon: "⚡",
         items: [
-          { name: "Deep Learning (PyTorch, TensorFlow 2.10, Scikit-Learn)", level: 92 },
+          { name: "Deep Learning & NLP (PyTorch, TensorFlow 2.10, Scikit-Learn)", level: 92 },
           { name: "Tree Ensembles & Tabular Modeling (XGBoost, GroupKFold)", level: 94 },
           { name: "Vision-Language Models & Fine-Tuning (LayoutLMV3, QWEN3)", level: 88 }
         ],
-        tags: ["PyTorch", "TensorFlow 2.10", "XGBoost", "LayoutLMV3", "QWEN3", "GroupKFold", "ZuCo Dataset"]
+        tags: ["Python", "PyTorch", "TensorFlow 2.10", "XGBoost", "LayoutLMV3", "QWEN3", "HuggingFace", "ZuCo Dataset", "Librosa"]
       },
       {
         id: "skill-cat-fullstack",
-        category: "Full-Stack, 3D & Cloud Infrastructure",
+        category: "Creative Tech, 3D Web & Cloud Acceleration",
         badge: "3D & Cloud",
         icon: "🌐",
         items: [
-          { name: "Interactive Web & 3D (React.js, Three.js, TypeScript)", level: 86 },
-          { name: "Backend APIs & Game Engines (Flask, Node.js, Unity 3D)", level: 85 },
+          { name: "Interactive 3D WebGL (Three.js, React.js, TypeScript)", level: 90 },
+          { name: "Game Engines & MoCap Kinematics (Unity 3D, .BVH Solving)", level: 88 },
           { name: "Hardware & Cloud Acceleration (CUDA, cuDNN, RunPod.io)", level: 90 }
         ],
-        tags: ["Three.js", "React", "Unity 3D", "TypeScript", "CUDA", "RunPod.io", "Flask", "WebGL"]
+        tags: ["Three.js", "React.js", "TypeScript", "Unity 3D", "Flask", "CUDA", "RunPod.io", "Java", "Python", "Git"]
       }
     ]
   },
@@ -211,9 +211,10 @@ export const DEFAULT_DATA = {
         points: [
           "Researched OCR and classification models; fine-tuned, trained, and tested LLMs, VLMs, and vLLMs including LayoutLMV3, QWEN3, CascadeTabNet, TableLLM, and PaddleOCR-VL.",
           "Managed dataset preparation and high-quality annotations using CVAT.",
-          "Utilized cloud GPUs on RunPod.io and handled cloud resource management and workflow formulation."
+          "Utilized cloud GPUs on RunPod.io and handled cloud resource management and workflow formulation.",
+          "Consulted and assisted in problem-solving, workflow formulation, and project management."
         ],
-        tags: ["LayoutLMV3", "QWEN3", "vLLM", "RunPod.io", "CVAT"]
+        tags: ["LayoutLMV3", "QWEN3", "vLLM", "RunPod.io", "CVAT", "PaddleOCR-VL"]
       },
       {
         id: "exp-card-draftine",
@@ -225,9 +226,10 @@ export const DEFAULT_DATA = {
         points: [
           "Annotated complex architectural diagrams on CVAT; interpreted ambiguous visual inputs and maintained strict labeling consistency.",
           "Assisted in research and model training using Detectron2 and YOLOv8x.",
-          "Analyzed visual and contextual data to identify inconsistencies and optimize dataset structure for training."
+          "Analyzed visual and contextual data to identify inconsistencies and optimize dataset structure for training.",
+          "Collaborated in refining dataset schemas and training pipelines for downstream spatial models."
         ],
-        tags: ["Detectron2", "YOLOv8x", "CVAT", "Computer Vision"]
+        tags: ["Detectron2", "YOLOv8x", "CVAT", "Computer Vision", "Dataset Structuring"]
       },
       {
         id: "exp-card-ieee",
@@ -238,9 +240,10 @@ export const DEFAULT_DATA = {
         badgeClass: "exp-badge-research",
         points: [
           "Co-authored 'Synapse: A Multimodal Assistive Reading System with Cognitive Difficulty Prediction'.",
-          "Engineered serverless attention tracking via MediaPipe and trained XGBoost on the ZuCo dataset (0.9989 AUC via behavioral gaze features)."
+          "Engineered serverless attention tracking via MediaPipe and trained XGBoost on the ZuCo dataset (0.9989 AUC via behavioral gaze features).",
+          "Integrated word-level scaffolding, sentence simplification, and text-to-speech within a unified React/TypeScript architecture."
         ],
-        tags: ["IEEE Xplore", "ZuCo Dataset", "XGBoost", "Eye Tracking"]
+        tags: ["IEEE Xplore", "ZuCo Dataset", "XGBoost", "Eye Tracking", "MediaPipe"]
       },
       {
         id: "exp-card-patent",
@@ -250,9 +253,10 @@ export const DEFAULT_DATA = {
         badge: "Patent",
         badgeClass: "exp-badge-patent",
         points: [
-          "Invented 'A Virtual Body Augmented with AI Assistant' — bridging 3D avatars, contextual AI agents, and sensory input."
+          "Invented 'A Virtual Body Augmented with AI Assistant' — investigating 3D embodiment, multi-sensor input fusion, and conversational AI agents.",
+          "Designed architecture bridging spatial avatars with contextual real-time intelligence."
         ],
-        tags: ["Patent", "3D Avatar", "AI Assistant", "Sensory AI"]
+        tags: ["Patent", "3D Avatar", "AI Assistant", "Sensory Fusion", "Virtual Embodiment"]
       },
       {
         id: "exp-card-honors",
@@ -262,12 +266,13 @@ export const DEFAULT_DATA = {
         badge: "Honors & BS",
         badgeClass: "exp-badge-honors",
         points: [
-          "B.Tech CSE (AI & ML) at IMS Engineering College (CGPA: 7.04/10).",
-          "Pursuing IIT Madras BS in Data Science (Passed Foundation, currently Diploma Level).",
-          "Led teams in 7 Hackathons; Finalist at Smart India Hackathon (SIH 2024) and Vihaan 8.0 (DTU).",
-          "British Council English C1 Advanced (577/600); Workshops at IIT Bombay (AI/ML) & IIT BHU (Python)."
+          "B.Tech CSE (AI & ML) at IMS Engineering College (CGPA: 7.04/10; 2022–2026).",
+          "Pursuing IIT Madras BS in Data Science (Passed Foundation, currently in Diploma Level).",
+          "Senior Secondary CBSE from Greenfields Public School, Delhi (84.4%, Stream: PCM CS).",
+          "Led teams across 7 national hackathons; Finalist at Smart India Hackathon (SIH 2024) and Vihaan 8.0 (DTU).",
+          "British Council English C1 Advanced (577/600); Placement Coordinator; Advanced training at IIT Bombay (AI/ML) & IIT BHU (Python)."
         ],
-        tags: ["IIT Madras", "SIH 2024", "Vihaan 8.0", "C1 Advanced"]
+        tags: ["IIT Madras", "SIH 2024", "Vihaan 8.0", "C1 Advanced", "Placement Coordinator"]
       }
     ]
   },
@@ -278,7 +283,7 @@ export const DEFAULT_DATA = {
     intro: "Always open to discussing Computer Vision, 3D interactive graphics, and deep learning systems. Connect with me directly:",
     status: {
       liveText: "Open for Opportunities",
-      details: "Available for AI/ML, Computer Vision & 3D Engineering roles, research fellowships, or collaborative projects. Typical response within 24 hours."
+      details: "Available for AI/ML, Computer Vision & Creative Technology roles, research collaborations, or engineering projects. Typical response within 24 hours."
     },
     form: {
       badge: "⚡ DIRECT TRANSMISSION",
@@ -352,7 +357,7 @@ export const DEFAULT_DATA = {
   customSections: {}
 };
 
-const PORTFOLIO_SCHEMA_VERSION = "5.0";
+const PORTFOLIO_SCHEMA_VERSION = "6.0";
 
 function loadPortfolioData() {
   try {

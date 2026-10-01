@@ -37,19 +37,21 @@ export function renderAboutBento() {
   if (expCard && ab.bentoCards && ab.bentoCards[1]) {
     const c = ab.bentoCards[1];
     const t = expCard.querySelector(".bento-card-title-black");
-    if (t && c.title) t.textContent = c.title;
+    if (t && (c.badge || c.title)) t.textContent = c.badge || c.title;
   }
 
   const achCard = document.getElementById("bento-card-achievements");
   if (achCard && ab.bentoCards && ab.bentoCards[2]) {
     const c = ab.bentoCards[2];
     const t = achCard.querySelector(".bento-card-title-black");
-    if (t && c.badge) t.textContent = c.badge;
+    if (t && (c.badge || c.title)) t.textContent = c.badge || c.title;
   }
 
   const prjCard = document.getElementById("bento-card-creative");
   if (prjCard && ab.bentoCards && ab.bentoCards[3]) {
     const c = ab.bentoCards[3];
+    const badgeEl = prjCard.querySelector(".bento-card-title-white");
+    if (badgeEl && c.badge) badgeEl.textContent = c.badge;
     const nameEl = prjCard.querySelector(".bento-project-name");
     if (nameEl && c.title) nameEl.textContent = c.title;
     const subEl = prjCard.querySelector(".bento-project-subtitle");

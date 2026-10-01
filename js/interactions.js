@@ -84,97 +84,114 @@ export function setupProjectsStreamInteractions() {
     });
   }
 
-  // Row 1: VidVision3D
-  const rowVid = document.getElementById("proj-row-vidvision");
-  if (rowVid) {
-    rowVid.addEventListener("click", () => {
-      const rect = rowVid.getBoundingClientRect();
-      spawnSparks(rect.left + rect.width / 2, rect.top + 30);
-      showBentoToast("🚀 VidVision3D: Markerless 3D Motion Capture — Opening repository...");
+  // Distinct GitHub buttons: stop propagation so row click does not fire
+  const ghButtons = document.querySelectorAll(".project-btn-gh");
+  ghButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const rect = btn.getBoundingClientRect();
+      spawnSparks(rect.left + rect.width / 2, rect.top + rect.height / 2);
+      showBentoToast("🐙 Opening GitHub repository...");
+    });
+  });
+
+  // Dedicated explore buttons: trigger row navigation without double firing
+  const exploreButtons = document.querySelectorAll(".project-btn-explore");
+  exploreButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const row = btn.closest(".project-stream-row");
+      if (row) {
+        handleProjectRowClick(row);
+      }
+    });
+  });
+
+  // Full row click handlers
+  const rows = document.querySelectorAll(".project-stream-row");
+  rows.forEach((row) => {
+    row.addEventListener("click", () => {
+      handleProjectRowClick(row);
+    });
+
+    row.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        handleProjectRowClick(row);
+      }
+    });
+  });
+
+  function handleProjectRowClick(row) {
+    const rowId = row.id;
+    const isLive = row.dataset.isLive === "true";
+    const targetUrl = row.dataset.targetUrl || row.dataset.link || (isLive ? row.dataset.deployedUrl : row.dataset.githubUrl) || "#";
+    const rect = row.getBoundingClientRect();
+    spawnSparks(rect.left + rect.width / 2, rect.top + 30);
+
+    if (rowId === "proj-row-vidvision") {
+      if (isLive) {
+        showBentoToast("🌐 Opening VidVision3D Live Application...");
+      } else {
+        showBentoToast("🚀 VidVision3D: Markerless 3D Motion Capture — Opening repository...");
+      }
       if (projectsScanner) {
         projectsScanner.visible = true;
         fxSpeeds.scannerSpeedMult = 3.2;
         setTimeout(() => { fxSpeeds.scannerSpeedMult = 1.0; }, 1400);
       }
       gsap.to(tLight, { intensity: 4.4, duration: 0.3, yoyo: true, repeat: 1 });
-      if (character) {
-        gsap.killTweensOf(character.scale);
-        gsap.fromTo(character.scale,
-          { x: baseScale * 1.06, y: baseScale * 0.94, z: baseScale * 1.06 },
-          { x: baseScale, y: baseScale, z: baseScale, duration: 0.45, ease: "elastic.out(1.15, 0.4)" }
-        );
+    } else if (rowId === "proj-row-synapse") {
+      if (isLive) {
+        showBentoToast("🌐 Opening Synapse Live Application...");
+      } else {
+        showBentoToast("🧠 Synapse: Assistive Reading System (IEEE Xplore Scopus 2026)");
       }
-      setTimeout(() => {
-        window.open("https://github.com/ArpitKumarpy/VidVision3D1", "_blank");
-      }, 400);
-    });
-  }
-
-  // Row 2: Synapse
-  const rowSyn = document.getElementById("proj-row-synapse");
-  if (rowSyn) {
-    rowSyn.addEventListener("click", () => {
-      const rect = rowSyn.getBoundingClientRect();
-      spawnSparks(rect.left + rect.width / 2, rect.top + 30);
-      showBentoToast("🧠 Synapse: Multimodal Assistive Reading System (IEEE Xplore Scopus 2026)");
       if (experienceConstellation) {
         experienceConstellation.visible = true;
         gsap.fromTo(experienceConstellation.scale, { x: 0.2, y: 0.2, z: 0.2 }, { x: 1, y: 1, z: 1, duration: 0.5, ease: "back.out(1.5)" });
       }
       gsap.to(mLight, { intensity: 3.8, duration: 0.3, yoyo: true, repeat: 1 });
-      setTimeout(() => {
-        window.open("https://github.com/ArpitKumarpy", "_blank");
-      }, 400);
-    });
-  }
-
-  // Row 3: SkyBook Flights
-  const rowSky = document.getElementById("proj-row-skybook");
-  if (rowSky) {
-    rowSky.addEventListener("click", () => {
-      const rect = rowSky.getBoundingClientRect();
-      spawnSparks(rect.left + rect.width / 2, rect.top + 30);
-      showBentoToast("✈️ SkyBook Flights: Airline Booking & Fleet Platform — Opening repository...");
-      gsap.to(tLight, { intensity: 4.2, duration: 0.3, yoyo: true, repeat: 1 });
-      if (character) {
-        gsap.killTweensOf(character.scale);
-        gsap.fromTo(character.scale,
-          { x: baseScale * 1.06, y: baseScale * 0.94, z: baseScale * 1.06 },
-          { x: baseScale, y: baseScale, z: baseScale, duration: 0.45, ease: "elastic.out(1.15, 0.4)" }
-        );
+    } else if (rowId === "proj-row-skybook") {
+      if (isLive) {
+        showBentoToast("🌐 Opening SkyBook Flights Live Application...");
+      } else {
+        showBentoToast("✈️ SkyBook Flights: Airline Booking Platform — Opening repository...");
       }
-      setTimeout(() => {
-        window.open("https://github.com/ArpitKumarpy/Skybook_Flights", "_blank");
-      }, 400);
-    });
-  }
-
-  // Row 4: Multimodal Emotion Recognition
-  const rowEmo = document.getElementById("proj-row-emotion");
-  if (rowEmo) {
-    rowEmo.addEventListener("click", () => {
-      const rect = rowEmo.getBoundingClientRect();
-      spawnPop(rect.left + rect.width / 2, rect.top + 30);
-      showBentoToast("🎭 Multimodal Emotion Recognition: Deep Learning CNN on TensorFlow");
+      gsap.to(tLight, { intensity: 4.2, duration: 0.3, yoyo: true, repeat: 1 });
+    } else if (rowId === "proj-row-emotion") {
+      if (isLive) {
+        showBentoToast("🌐 Opening Emotion AI Live Application...");
+      } else {
+        showBentoToast("🎭 Multimodal Emotion Recognition: Deep Learning CNN on TensorFlow");
+      }
       gsap.to(mLight, { intensity: 4.2, duration: 0.3, yoyo: true, repeat: 1 });
-      setTimeout(() => {
-        window.open("https://github.com/ArpitKumarpy", "_blank");
-      }, 400);
-    });
-  }
-
-  // Row 4: AI Document Intelligence
-  const rowVlm = document.getElementById("proj-row-vlm");
-  if (rowVlm) {
-    rowVlm.addEventListener("click", () => {
-      const rect = rowVlm.getBoundingClientRect();
-      spawnSparks(rect.left + rect.width / 2, rect.top + 30);
-      showBentoToast("📄 AI & Vision-Language Document Intelligence: LayoutLMV3 & RunPod");
+    } else if (rowId === "proj-row-vlm") {
+      if (isLive) {
+        showBentoToast("🌐 Opening Document AI Live Application...");
+      } else {
+        showBentoToast("📄 AI & Vision-Language Document Intelligence: LayoutLMV3 & RunPod");
+      }
       gsap.to(rimLight, { intensity: 4.0, duration: 0.3, yoyo: true, repeat: 1 });
+    } else {
+      showBentoToast(isLive ? "🌐 Opening live deployment..." : "🚀 Exploring project repository...");
+      gsap.to(tLight, { intensity: 3.5, duration: 0.3, yoyo: true, repeat: 1 });
+    }
+
+    if (character) {
+      gsap.killTweensOf(character.scale);
+      gsap.fromTo(character.scale,
+        { x: baseScale * 1.06, y: baseScale * 0.94, z: baseScale * 1.06 },
+        { x: baseScale, y: baseScale, z: baseScale, duration: 0.45, ease: "elastic.out(1.15, 0.4)" }
+      );
+    }
+
+    if (targetUrl && targetUrl !== "#") {
       setTimeout(() => {
-        window.open("https://github.com/ArpitKumarpy", "_blank");
-      }, 400);
-    });
+        window.open(targetUrl, "_blank");
+      }, 350);
+    }
   }
 
   window.addEventListener("keydown", (e) => {

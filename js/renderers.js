@@ -171,8 +171,14 @@ export function renderProjectsStream() {
       const cleanTitle = p.title.replace(/\s*—\s*Markerless Motion Capture/i, "");
       const rowId = p.id || (idx === 0 ? 'proj-row-vidvision' : (idx === 1 ? 'proj-row-synapse' : (idx === 2 ? 'proj-row-skybook' : (idx === 3 ? 'proj-row-emotion' : 'proj-row-vlm'))));
 
+      const deployedUrl = (p.deployedUrl || "").trim();
+      const githubUrl = (p.githubUrl || (p.link && p.link.includes("github") ? p.link : "")).trim();
+      const isLive = Boolean(deployedUrl);
+      const primaryUrl = isLive ? deployedUrl : (githubUrl || p.link || "#");
+      const hasGithub = Boolean(githubUrl);
+
       return `
-        <article class="project-stream-row" id="${rowId}" data-link="${p.link || ''}" role="button" tabindex="0" title="${cleanTitle}">
+        <article class="project-stream-row" id="${rowId}" data-target-url="${primaryUrl}" data-github-url="${githubUrl}" data-deployed-url="${deployedUrl}" data-is-live="${isLive ? 'true' : 'false'}" data-link="${primaryUrl}" role="button" tabindex="0" title="${cleanTitle} — ${isLive ? 'Open Live Demo' : 'Explore Project'}">
           <div class="project-thumb-frame ${pv.theme}">
             <div class="thumb-mockup-screen">
               <div class="mockup-top-bar">
@@ -189,8 +195,23 @@ export function renderProjectsStream() {
           </div>
           <div class="project-row-info">
             <div class="project-row-header">
-              <h3 class="project-row-title">${cleanTitle}</h3>
-              <span class="project-stream-arrow">↗</span>
+              <div class="project-title-wrap">
+                <h3 class="project-row-title">${cleanTitle}</h3>
+                ${p.badge ? `<span class="project-card-badge">${p.badge}</span>` : ''}
+              </div>
+              <div class="project-actions-group">
+                ${hasGithub ? `
+                  <a href="${githubUrl}" target="_blank" rel="noopener noreferrer" class="project-btn-gh" data-gh-link="${githubUrl}" title="View source repository on GitHub">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>GitHub</span>
+                  </a>
+                ` : ''}
+                <a href="${primaryUrl}" target="_blank" rel="noopener noreferrer" class="project-btn-explore ${isLive ? 'is-live' : 'is-preview'}" data-target-url="${primaryUrl}" title="${isLive ? 'Open live deployed web app' : 'Explore project'}">
+                  ${isLive ? `<span class="live-dot"></span><span>Live Demo ↗</span>` : `<span>Explore ↗</span>`}
+                </a>
+              </div>
             </div>
             <p class="project-row-desc">${p.desc}</p>
             <div class="project-row-tags">

@@ -108,6 +108,8 @@ export const DEFAULT_DATA = {
         badge: "Featured • 3D MoCap & Kinematics",
         desc: "Client-side motion capture and animation platform converting monocular video and webcam streams into interactive 3D skeletal armatures (.BVH export for Blender/Unity/Unreal) and 2D kinematic puppet rigs. Engineered with Three.js, BlazePose, and React, eliminating cloud dependencies and cutting animation costs by 80% for indie creators.",
         tech: ["BlazePose", "MediaPipe", "Three.js", "React", "TypeScript", "Unity 3D", "Python", "BVH Export"],
+        githubUrl: "https://github.com/ArpitKumarpy/VidVision3D1",
+        deployedUrl: "",
         link: "https://github.com/ArpitKumarpy/VidVision3D1",
         btnText: "Explore VidVision3D ↗",
         mockupTitle: "VidVision3D",
@@ -119,8 +121,10 @@ export const DEFAULT_DATA = {
         badge: "IEEE Xplore Scopus 2026",
         desc: "Co-authored privacy-first, browser-native assistive reading platform for dyslexic users. Features real-time iris tracking via MediaPipe, an XGBoost cognitive difficulty prediction model trained on the ZuCo dataset (0.9989 AUC via behavioral gaze features), dynamic typographic scaffolding, and text-to-speech within a unified React/TypeScript architecture.",
         tech: ["Eye Tracking", "XGBoost", "IEEE Xplore", "ZuCo Dataset", "MediaPipe", "React", "TypeScript"],
-        link: "https://github.com/ArpitKumarpy",
-        btnText: "IEEE Paper & Code ↗",
+        githubUrl: "https://github.com/ArpitKumarpy/Dyslexia",
+        deployedUrl: "",
+        link: "https://github.com/ArpitKumarpy/Dyslexia",
+        btnText: "Explore Synapse ↗",
         mockupTitle: "Synapse AI",
         mockupHud: "0.9989 AUC · Eye Tracking"
       },
@@ -130,6 +134,8 @@ export const DEFAULT_DATA = {
         badge: "Full-Stack • React & Cloud Architecture",
         desc: "End-to-end airline booking and fleet management system featuring real-time flight search, interactive aircraft seat selection, passenger ticketing with PDF generation, and full administrative CRUD control across fleets, cabins, and schedules.",
         tech: ["React", "JavaScript", "Vite", "Node.js", "REST APIs", "TailwindCSS", "State Management"],
+        githubUrl: "https://github.com/ArpitKumarpy/Skybook_Flights",
+        deployedUrl: "",
         link: "https://github.com/ArpitKumarpy/Skybook_Flights",
         btnText: "Explore SkyBook ↗",
         mockupTitle: "SkyBook",
@@ -141,8 +147,10 @@ export const DEFAULT_DATA = {
         badge: "Deep Learning • Audio / Vision / NLP",
         desc: "Real-time AI system detecting human emotions by fusing voice, facial expressions, and textual signals. Trained a custom CNN on the RAVDESS dataset with Librosa MFCC and spectral features on TensorFlow 2.10 (CUDA 11.2/cuDNN 8.1), fusing Wav2Vec2, DeepFace, OpenCV, and Transformers into a GPU-accelerated low-latency pipeline.",
         tech: ["TensorFlow 2.10", "PyTorch", "Wav2Vec2", "DeepFace", "OpenCV", "Librosa", "CUDA"],
+        githubUrl: "https://github.com/ArpitKumarpy",
+        deployedUrl: "",
         link: "https://github.com/ArpitKumarpy",
-        btnText: "Explore Project ↗",
+        btnText: "Explore Emotion AI ↗",
         mockupTitle: "Emotion AI",
         mockupHud: "Voice + Vision + NLP"
       },
@@ -152,8 +160,10 @@ export const DEFAULT_DATA = {
         badge: "Industry • LLMs & VLMs",
         desc: "Research and evaluation pipeline for multimodal Vision-Language Models and document intelligence (LayoutLMV3, QWEN3, CascadeTabNet, TableLLM, PaddleOCR-VL). Curated high-precision architectural and tabular datasets using CVAT, and managed distributed cloud GPU training clusters on RunPod.io.",
         tech: ["VLMs", "LayoutLMV3", "QWEN3", "RunPod.io", "CVAT", "PaddleOCR-VL", "Detectron2"],
-        link: "https://github.com/ArpitKumarpy",
-        btnText: "GitHub Profile ↗",
+        githubUrl: "https://github.com/ArpitKumarpy/PDFentities",
+        deployedUrl: "",
+        link: "https://github.com/ArpitKumarpy/PDFentities",
+        btnText: "Explore Document AI ↗",
         mockupTitle: "Document AI",
         mockupHud: "LayoutLMV3 · QWEN3"
       }
@@ -368,7 +378,7 @@ export const DEFAULT_DATA = {
   customSections: {}
 };
 
-const PORTFOLIO_SCHEMA_VERSION = "7.0";
+const PORTFOLIO_SCHEMA_VERSION = "8.0";
 
 function loadPortfolioData() {
   try {

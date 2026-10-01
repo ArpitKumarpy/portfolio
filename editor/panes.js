@@ -568,24 +568,29 @@ import { showToast } from "./studio-ui.js";
 
               <div class="ped-form-row">
                 <div class="ped-form-group">
-                  <label class="ped-label">Action Button Title (e.g. Explore VidVision3D1 ↗)</label>
-                  <input type="text" class="ped-input ped-proj-btn" data-idx="${idx}" value="${p.btnText || 'Explore Project ↗'}" />
+                  <label class="ped-label">Deployed App URL (Optional — opens when card is clicked)</label>
+                  <input type="text" class="ped-input ped-proj-deployed" data-idx="${idx}" value="${p.deployedUrl || ''}" placeholder="e.g. https://vidvision3d.vercel.app (leave blank if not yet deployed)" />
                 </div>
                 <div class="ped-form-group">
-                  <label class="ped-label">Project Link URL</label>
-                  <input type="text" class="ped-input ped-proj-link" data-idx="${idx}" value="${p.link || '#'}" />
+                  <label class="ped-label">GitHub Repository URL (Opens via dedicated GitHub button)</label>
+                  <input type="text" class="ped-input ped-proj-github" data-idx="${idx}" value="${p.githubUrl || (p.link && p.link.includes('github') ? p.link : '')}" placeholder="e.g. https://github.com/ArpitKumarpy/..." />
                 </div>
               </div>
 
               <div class="ped-form-row">
                 <div class="ped-form-group">
+                  <label class="ped-label">Action Button Label (e.g. Explore VidVision3D ↗)</label>
+                  <input type="text" class="ped-input ped-proj-btn" data-idx="${idx}" value="${p.btnText || 'Explore Project ↗'}" />
+                </div>
+                <div class="ped-form-group">
                   <label class="ped-label">Mockup Screen Title</label>
                   <input type="text" class="ped-input ped-proj-mockup-title" data-idx="${idx}" value="${p.mockupTitle || ''}" placeholder="e.g. VidVision3D" />
                 </div>
-                <div class="ped-form-group">
-                  <label class="ped-label">Mockup HUD Pill Text</label>
-                  <input type="text" class="ped-input ped-proj-mockup-hud" data-idx="${idx}" value="${p.mockupHud || ''}" placeholder="e.g. 3D MoCap · MediaPipe" />
-                </div>
+              </div>
+
+              <div class="ped-form-group">
+                <label class="ped-label">Mockup HUD Pill Text</label>
+                <input type="text" class="ped-input ped-proj-mockup-hud" data-idx="${idx}" value="${p.mockupHud || ''}" placeholder="e.g. 3D MoCap · MediaPipe" />
               </div>
 
               <div class="ped-form-group">
@@ -614,8 +619,19 @@ import { showToast } from "./studio-ui.js";
     container.querySelectorAll(".ped-proj-btn").forEach(inp => {
       inp.addEventListener("input", (e) => items[e.target.dataset.idx].btnText = e.target.value);
     });
-    container.querySelectorAll(".ped-proj-link").forEach(inp => {
-      inp.addEventListener("input", (e) => items[e.target.dataset.idx].link = e.target.value);
+    container.querySelectorAll(".ped-proj-deployed").forEach(inp => {
+      inp.addEventListener("input", (e) => {
+        const idx = e.target.dataset.idx;
+        items[idx].deployedUrl = e.target.value;
+        items[idx].link = items[idx].deployedUrl || items[idx].githubUrl || "#";
+      });
+    });
+    container.querySelectorAll(".ped-proj-github").forEach(inp => {
+      inp.addEventListener("input", (e) => {
+        const idx = e.target.dataset.idx;
+        items[idx].githubUrl = e.target.value;
+        items[idx].link = items[idx].deployedUrl || items[idx].githubUrl || "#";
+      });
     });
     container.querySelectorAll(".ped-proj-mockup-title").forEach(inp => {
       inp.addEventListener("input", (e) => items[e.target.dataset.idx].mockupTitle = e.target.value);
@@ -658,8 +674,10 @@ import { showToast } from "./studio-ui.js";
         badge: "Computer Vision",
         desc: "High-performance pipeline trained on custom datasets with real-time inference.",
         tech: ["Python", "PyTorch", "OpenCV"],
-        btnText: "Explore Project ↗",
+        githubUrl: "https://github.com/ArpitKumarpy",
+        deployedUrl: "",
         link: "https://github.com/ArpitKumarpy",
+        btnText: "Explore Project ↗",
         mockupTitle: "Project Demo",
         mockupHud: "Live Inference"
       });

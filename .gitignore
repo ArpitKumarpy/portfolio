@@ -4,8 +4,6 @@
 # ============================================================================
 
 # Sensitive API Keys & Config (Web3Forms access keys, tokens)
-js/config.js
-config.js
 secrets.js
 .env
 .env.*

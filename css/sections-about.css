@@ -218,13 +218,133 @@
 }
 
 .about-bento-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-top: 14px;
+  margin-bottom: 22px;
+  max-width: 580px;
+}
+
+.about-bio-p {
   font-family: 'Plus Jakarta Sans', var(--font-body), sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.62;
+  color: rgba(240, 235, 244, 0.78);
+  letter-spacing: 0.012em;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.about-bio-footer {
+  color: rgba(240, 235, 244, 0.62);
   font-size: 0.84rem;
-  line-height: 1.5;
-  color: rgba(240, 235, 244, 0.68);
-  margin-top: 10px;
-  max-width: 540px;
-  letter-spacing: 0.01em;
+  font-style: italic;
+  padding-left: 10px;
+  border-left: 2px solid rgba(0, 245, 212, 0.4);
+  margin-top: 2px;
+}
+
+/* ============================================================================
+   BOLD ANIMATED TEXT ELEMENTS & HIGHLIGHTS
+   Cyber-luminous gradients, micro-glows, dynamic shimmers
+   ============================================================================ */
+
+.bio-highlight {
+  font-weight: 700;
+  display: inline;
+  position: relative;
+  background-size: 260% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bioGradientFlow 5s ease infinite;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.bio-highlight-cyan {
+  background-image: linear-gradient(120deg, #00F5D4 0%, #38BDF8 30%, #A78BFA 60%, #00F5D4 100%);
+  animation: bioGradientFlow 5s ease infinite, bioAuraPulseCyan 3.6s ease-in-out infinite;
+}
+
+.bio-highlight-gradient {
+  background-image: linear-gradient(120deg, #00F5D4 0%, #818CF8 28%, #FF2A85 58%, #FFB830 82%, #00F5D4 100%);
+  animation: bioGradientFlow 6s ease infinite, bioAuraPulseMulti 4.2s ease-in-out infinite;
+}
+
+.bio-highlight-magenta {
+  background-image: linear-gradient(120deg, #FF2A85 0%, #F43F5E 28%, #FFB830 58%, #BA68C8 85%, #FF2A85 100%);
+  animation: bioGradientFlow 4.5s ease infinite, bioAuraPulseMagenta 3.2s ease-in-out infinite;
+}
+
+.bio-highlight:hover {
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 16px rgba(0, 245, 212, 0.85)) brightness(1.2);
+}
+
+.bio-highlight-magenta:hover {
+  filter: drop-shadow(0 0 16px rgba(255, 42, 133, 0.85)) brightness(1.2);
+}
+
+.bio-sparkle {
+  display: inline-block;
+  font-size: 0.72rem;
+  margin-right: 3px;
+  color: #FFD700;
+  -webkit-text-fill-color: #FFD700;
+  animation: bioSparkleSpin 2.6s ease-in-out infinite;
+  vertical-align: 1px;
+}
+
+@keyframes bioGradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bioAuraPulseCyan {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(0, 245, 212, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 13px rgba(0, 245, 212, 0.7));
+  }
+}
+
+@keyframes bioAuraPulseMulti {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(129, 140, 248, 0.35));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(255, 42, 133, 0.65));
+  }
+}
+
+@keyframes bioAuraPulseMagenta {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(255, 42, 133, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 13px rgba(255, 42, 133, 0.7));
+  }
+}
+
+@keyframes bioSparkleSpin {
+  0%, 100% {
+    transform: scale(0.9) rotate(0deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.25) rotate(22deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 8px #FFD700);
+  }
 }
 
 /* Bento 2x2 Grid */
@@ -766,7 +886,13 @@
   }
 
   .about-bento-bio {
-    font-size: 0.9rem !important;
+    gap: 11px;
+    margin-top: 12px;
+  }
+
+  .about-bio-p {
+    font-size: 0.84rem !important;
+    line-height: 1.58 !important;
   }
 
   .about-bento-close {

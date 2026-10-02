@@ -26,8 +26,8 @@ export const DEFAULT_DATA = {
   about: {
     titleMain: "ABOUT",
     titleGhost: "ME",
-    intro: "Creative Technologist and AI Engineer bridging machine perception with interactive digital expression. Driven by 3D kinematics, computer vision, and human-centered design, I build intelligent systems that empower digital artists, independent animators, and assistive platforms to transform raw data into living motion.",
-    bio: "Creative Technologist and AI Engineer bridging machine perception with interactive digital expression. Driven by 3D kinematics, computer vision, and human-centered design, I build intelligent systems that empower digital artists, independent animators, and assistive platforms to transform raw data into living motion.",
+    intro: "I’m a Computer Science engineer focused on AI, computer vision, and intelligent interactive systems.",
+    bio: `<p class="about-bio-p">I’m a Computer Science engineer focused on <strong class="bio-highlight bio-highlight-cyan"><span class="bio-sparkle">✦</span> AI, computer vision, and intelligent interactive systems</strong>.</p>\n<p class="about-bio-p">I enjoy taking problems that sit somewhere between research and real-world use and turning them into things people can actually interact with. My work has ranged from <strong class="bio-highlight bio-highlight-gradient">computer vision and markerless motion capture to multimodal AI, OCR, and vision-language models</strong>—often involving the full journey from dataset preparation and model training to the final product.</p>\n<p class="about-bio-p">What interests me most is the space where <strong class="bio-highlight bio-highlight-magenta"><span class="bio-sparkle">✦</span> AI meets creativity and human interaction</strong>. I like building systems that don't just demonstrate a model, but give that model a purpose—whether that's making reading more accessible, reducing the cost of motion capture, or exploring new ways for people to interact with technology.</p>\n<p class="about-bio-p about-bio-footer">I’m still learning, experimenting, and occasionally breaking things along the way. That’s probably the part I enjoy most.</p>`,
     bentoCards: [
       {
         id: "bento-card-education",
@@ -401,7 +401,7 @@ export const DEFAULT_DATA = {
   customSections: {}
 };
 
-const PORTFOLIO_SCHEMA_VERSION = "13.0";
+const PORTFOLIO_SCHEMA_VERSION = "14.0";
 
 function loadPortfolioData() {
   try {

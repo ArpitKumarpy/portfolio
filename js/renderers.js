@@ -23,7 +23,13 @@ export function renderAboutBento() {
   const titleGhost = container.querySelector(".about-bento-title-ghost");
   if (titleGhost && ab.titleGhost && ab.titleGhost !== "ENGINEER") titleGhost.textContent = ab.titleGhost;
   const bio = container.querySelector(".about-bento-bio");
-  if (bio && (ab.bio || ab.intro)) bio.textContent = ab.bio || ab.intro;
+  if (bio && (ab.bio || ab.intro)) {
+    if (ab.bio && (ab.bio.includes("<p") || ab.bio.includes("<strong"))) {
+      bio.innerHTML = ab.bio;
+    } else {
+      bio.textContent = ab.bio || ab.intro;
+    }
+  }
 
   // Dynamically update card titles/subtitles without breaking cyber-glass markup
   const eduCard = document.getElementById("bento-card-education");

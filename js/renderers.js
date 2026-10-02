@@ -257,49 +257,32 @@ export function renderSkillsStream() {
   const bio = container.querySelector(".skills-stream-bio");
   if (bio && sk.bio) bio.textContent = sk.bio;
 
+  // Remove metrics bar if present
   const metricsBar = container.querySelector(".skills-metrics-bar");
-  if (metricsBar && sk.metrics) {
-    metricsBar.innerHTML = sk.metrics.map(m => `
-      <div class="skills-metric-pill">
-        <span class="metric-icon">${m.icon || '✦'}</span>
-        <span class="metric-val">${m.val || ''}</span>
-        <span class="metric-lbl">${m.lbl || ''}</span>
-      </div>
-    `).join("");
+  if (metricsBar) {
+    metricsBar.remove();
   }
 
-  const list = container.querySelector(".skills-stream-list");
-  const cats = Array.isArray(sk) ? sk : (sk.categories || []);
-  if (list && cats.length) {
-    list.innerHTML = cats.map(cat => {
-      const itemsHtml = (cat.items || []).map(item => `
-        <div class="skill-progress-item">
-          <div class="skill-item-header">
-            <span class="skill-name">${item.name}</span>
-            <span class="skill-percent">${item.level}%</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill skill-fill-gold" data-level="${item.level}" style="width: ${item.level}%;"></div>
-          </div>
-        </div>
-      `).join("");
-
-      const tagsList = cat.tags || [];
-      const tagsHtml = tagsList.map(t => `<span class="stream-tag">${t}</span>`).join("");
+  const grid = container.querySelector(".skills-editorial-grid") || container.querySelector(".skills-stream-list");
+  const cats = sk.categories || sk.groups || (Array.isArray(sk) ? sk : []);
+  if (grid && cats.length) {
+    grid.className = "skills-editorial-grid";
+    grid.innerHTML = cats.map(cat => {
+      const itemsList = Array.isArray(cat.items) ? cat.items : [];
+      const chipsHtml = itemsList.map(item => {
+        const name = typeof item === "string" ? item : (item.name || "");
+        return `<span class="skill-chip">${name}</span>`;
+      }).join("");
 
       return `
-        <div class="skill-category-card" id="${cat.id || ''}">
-          <div class="skill-card-top">
-            <div class="skill-cat-title-wrap">
-              <span class="skill-cat-icon">${cat.icon || '⚡'}</span>
-              <h3 class="skill-cat-heading">${cat.category}</h3>
-            </div>
-            <span class="skill-cat-badge">${cat.badge || 'Speciality'}</span>
+        <div class="skills-group" id="${cat.id || ''}">
+          <div class="skills-group-header">
+            <h3 class="skills-group-title">${cat.category || cat.title || ''}</h3>
+            <div class="skills-group-line"></div>
           </div>
-          <div class="skill-progress-list">
-            ${itemsHtml}
+          <div class="skills-chips-flow">
+            ${chipsHtml}
           </div>
-          ${tagsHtml ? `<div class="skill-tags-row">${tagsHtml}</div>` : ''}
         </div>
       `;
     }).join("");
@@ -471,33 +454,21 @@ function renderSection(sec) {
 
   else if (sec === "skills") {
     let animIdx = 0;
+    const cats = Array.isArray(d.skills) ? d.skills : (d.skills && d.skills.categories ? d.skills.categories : []);
     el.innerHTML = `
       <div class="skills-categories">
-        ${(Array.isArray(d.skills) ? d.skills : (d.skills && d.skills.categories ? d.skills.categories : [])).map((cat) => `
-          <div class="skill-category">
-            <div class="skill-cat-title">&gt; ${cat.category}</div>
-            <div class="skills-list">
+        ${cats.map((cat) => `
+          <div class="skill-category" style="margin-bottom: 16px;">
+            <div class="skill-cat-title" style="font-family:'Space Grotesk',sans-serif; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; color:rgba(255,255,255,0.9); margin-bottom:8px;">&gt; ${cat.category}</div>
+            <div class="skills-chips-flow">
               ${(cat.items || []).map((s) => {
-      const itemHtml = `
-                  <div class="skill-item" style="${delay(animIdx, .04, .06)}">
-                    <div class="skill-header">
-                      <span class="skill-name">${s.name}</span>
-                      <span class="skill-level">${s.level}%</span>
-                    </div>
-                    <div class="skill-bar-bg">
-                      <div class="skill-bar-fill" data-lv="${s.level}"></div>
-                    </div>
-                  </div>`;
-      animIdx++;
-      return itemHtml;
-    }).join("")}
+                const name = typeof s === "string" ? s : (s.name || "");
+                return `<span class="skill-chip" style="${delay(animIdx++, .03, .04)}">${name}</span>`;
+              }).join("")}
             </div>
           </div>
         `).join("")}
       </div>`;
-    setTimeout(() => {
-      document.querySelectorAll(".skill-bar-fill").forEach(b => { b.style.width = b.dataset.lv + "%"; });
-    }, 120);
   }
 
   else if (sec === "experience") {

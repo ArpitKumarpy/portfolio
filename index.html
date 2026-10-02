@@ -12,8 +12,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=21" />
-  <link rel="stylesheet" href="editor.css?v=21" />
+  <link rel="stylesheet" href="style.css?v=22" />
+  <link rel="stylesheet" href="editor.css?v=22" />
 </head>
 
 <body>
@@ -592,230 +592,70 @@
             Workflows.</p>
         </header>
 
-        <!-- Quick Metrics Bar -->
-        <div class="skills-metrics-bar">
-          <div class="skills-metric-pill">
-            <span class="metric-icon">✦</span>
-            <span class="metric-val">96%</span>
-            <span class="metric-lbl">C1 Advanced (577/600)</span>
-          </div>
-          <div class="skills-metric-pill">
-            <span class="metric-icon">◈</span>
-            <span class="metric-val">95%</span>
-            <span class="metric-lbl">Pose Estimation &amp; CV</span>
-          </div>
-          <div class="skills-metric-pill">
-            <span class="metric-icon">⚡</span>
-            <span class="metric-val">CUDA</span>
-            <span class="metric-lbl">GPU Accelerated</span>
-          </div>
-        </div>
-
-        <div class="skills-stream-list">
-          <!-- Category 1: Language Proficiency -->
-          <div class="skill-category-card" id="skill-cat-lang">
-            <div class="skill-card-top">
-              <div class="skill-cat-title-wrap">
-                <span class="skill-cat-icon">🗣️</span>
-                <h3 class="skill-cat-heading">Language Proficiency</h3>
-              </div>
-              <span class="skill-cat-badge">C1 Advanced &amp; Native</span>
+        <div class="skills-editorial-grid">
+          <!-- Category 1: AI / Machine Learning -->
+          <div class="skills-group" id="skill-group-aiml">
+            <div class="skills-group-header">
+              <h3 class="skills-group-title">AI / Machine Learning</h3>
+              <div class="skills-group-line"></div>
             </div>
-            <div class="skill-progress-list">
-              <div class="skill-progress-item">
-                <div class="skill-item-header">
-                  <span class="skill-name">English — British Council C1 Advanced (Score: 577/600)</span>
-                  <span class="skill-percent">96%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill skill-fill-gold" data-level="96" style="width: 96%;"></div>
-                </div>
-              </div>
-              <div class="skill-progress-item">
-                <div class="skill-item-header">
-                  <span class="skill-name">Hindi — Native Language (Full Bilingual Fluency)</span>
-                  <span class="skill-percent">100%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill skill-fill-gold" data-level="100" style="width: 100%;"></div>
-                </div>
-              </div>
-              <div class="skill-progress-item">
-                <div class="skill-item-header">
-                  <span class="skill-name">Technical Communication &amp; Research Writing (Scopus IEEE Author)</span>
-                  <span class="skill-percent">92%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill skill-fill-gold" data-level="92" style="width: 92%;"></div>
-                </div>
-              </div>
-              <div class="skill-progress-item">
-                <div class="skill-item-header">
-                  <span class="skill-name">Programming Languages (Python 3.x, Java 17, TypeScript)</span>
-                  <span class="skill-percent">94%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill skill-fill-gold" data-level="94" style="width: 94%;"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skill-tags-row">
-              <span class="stream-tag">British Council (577/600)</span>
-              <span class="stream-tag">C1 Advanced</span>
-              <span class="stream-tag">English (Fluent)</span>
-              <span class="stream-tag">Hindi (Native)</span>
-              <span class="stream-tag">Python 3.x</span>
-              <span class="stream-tag">Java 17</span>
-              <span class="stream-tag">Technical Writing</span>
-              <span class="stream-tag">IEEE Scopus Author</span>
+            <div class="skills-chips-flow">
+              <span class="skill-chip">PyTorch</span>
+              <span class="skill-chip">TensorFlow</span>
+              <span class="skill-chip">Hugging Face</span>
+              <span class="skill-chip">XGBoost</span>
+              <span class="skill-chip">NLP</span>
+              <span class="skill-chip">LLM / VLM Fine-tuning</span>
             </div>
           </div>
 
-          <!-- Category 2: Computer Vision & Pose Estimation -->
-          <div class="skill-category-card" id="skill-cat-cv">
-            <div class="skill-card-top">
-              <div class="skill-cat-title-wrap">
-                <span class="skill-cat-icon">👁</span>
-                <h3 class="skill-cat-heading">Computer Vision &amp; Pose Estimation</h3>
-              </div>
-              <span class="skill-cat-badge">Core Speciality</span>
+          <!-- Category 2: Computer Vision -->
+          <div class="skills-group" id="skill-group-cv">
+            <div class="skills-group-header">
+              <h3 class="skills-group-title">Computer Vision</h3>
+              <div class="skills-group-line"></div>
             </div>
-            <div class="skill-progress-list">
-              <div class="skill-progress-item">
-                <div class="skill-item-header">
-                  <span class="skill-name">OpenCV, MediaPipe &amp; BlazePose (3D Landmark Extraction)</span>
-                  <span class="skill-percent">95%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill skill-fill-gold" data-level="95" style="width: 95%;"></div>
-                </div>
-              </div>
-              <div class="skill-progress-item">
-                <div class="skill-item-header">
-                  <span class="skill-name">Object Detection &amp; Segmentation (YOLOv8x, Detectron2)</span>
-                  <span class="skill-percent">90%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill skill-fill-gold" data-level="90" style="width: 90%;"></div>
-                </div>
-              </div>
-              <div class="skill-progress-item">
-                <div class="skill-item-header">
-                  <span class="skill-name">Dataset Annotation &amp; Pipeline Tooling (CVAT)</span>
-                  <span class="skill-percent">92%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill skill-fill-gold" data-level="92" style="width: 92%;"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skill-tags-row">
-              <span class="stream-tag">BlazePose</span>
-              <span class="stream-tag">MediaPipe</span>
-              <span class="stream-tag">OpenCV</span>
-              <span class="stream-tag">YOLOv8x</span>
-              <span class="stream-tag">Detectron2</span>
-              <span class="stream-tag">CVAT</span>
-              <span class="stream-tag">Markerless 3D MoCap</span>
+            <div class="skills-chips-flow">
+              <span class="skill-chip">OpenCV</span>
+              <span class="skill-chip">MediaPipe</span>
+              <span class="skill-chip">BlazePose</span>
+              <span class="skill-chip">YOLO</span>
+              <span class="skill-chip">Detectron2</span>
+              <span class="skill-chip">OCR · Segmentation</span>
             </div>
           </div>
 
-          <!-- Category 3: AI, Machine Learning & VLMs -->
-          <div class="skill-category-card" id="skill-cat-ml">
-            <div class="skill-card-top">
-              <div class="skill-cat-title-wrap">
-                <span class="skill-cat-icon">⚡</span>
-                <h3 class="skill-cat-heading">AI, Machine Learning &amp; VLMs</h3>
-              </div>
-              <span class="skill-cat-badge">Deep Learning</span>
+          <!-- Category 3: Development -->
+          <div class="skills-group" id="skill-group-dev">
+            <div class="skills-group-header">
+              <h3 class="skills-group-title">Development</h3>
+              <div class="skills-group-line"></div>
             </div>
-            <div class="skill-progress-list">
-              <div class="skill-progress-item">
-                <div class="skill-item-header">
-                  <span class="skill-name">Deep Learning (PyTorch, TensorFlow 2.10, Scikit-Learn)</span>
-                  <span class="skill-percent">92%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill skill-fill-gold" data-level="92" style="width: 92%;"></div>
-                </div>
-              </div>
-              <div class="skill-progress-item">
-                <div class="skill-item-header">
-                  <span class="skill-name">Tree Ensembles &amp; Tabular Modeling (XGBoost, GroupKFold)</span>
-                  <span class="skill-percent">94%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill skill-fill-gold" data-level="94" style="width: 94%;"></div>
-                </div>
-              </div>
-              <div class="skill-progress-item">
-                <div class="skill-item-header">
-                  <span class="skill-name">Vision-Language Models &amp; Fine-Tuning (LayoutLMV3, QWEN3)</span>
-                  <span class="skill-percent">88%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill skill-fill-gold" data-level="88" style="width: 88%;"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skill-tags-row">
-              <span class="stream-tag">PyTorch</span>
-              <span class="stream-tag">TensorFlow 2.10</span>
-              <span class="stream-tag">XGBoost</span>
-              <span class="stream-tag">LayoutLMV3</span>
-              <span class="stream-tag">QWEN3</span>
-              <span class="stream-tag">GroupKFold</span>
-              <span class="stream-tag">ZuCo Dataset</span>
+            <div class="skills-chips-flow">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">Java</span>
+              <span class="skill-chip">TypeScript</span>
+              <span class="skill-chip">React</span>
+              <span class="skill-chip">Flask</span>
+              <span class="skill-chip">Three.js</span>
+              <span class="skill-chip">MySQL · Git</span>
             </div>
           </div>
 
-          <!-- Category 4: Full-Stack, 3D & Cloud Infrastructure -->
-          <div class="skill-category-card" id="skill-cat-fullstack">
-            <div class="skill-card-top">
-              <div class="skill-cat-title-wrap">
-                <span class="skill-cat-icon">🌐</span>
-                <h3 class="skill-cat-heading">Full-Stack, 3D &amp; Cloud Infrastructure</h3>
-              </div>
-              <span class="skill-cat-badge">Infrastructure &amp; 3D</span>
+          <!-- Category 4: Infrastructure -->
+          <div class="skills-group" id="skill-group-infra">
+            <div class="skills-group-header">
+              <h3 class="skills-group-title">Infrastructure</h3>
+              <div class="skills-group-line"></div>
             </div>
-            <div class="skill-progress-list">
-              <div class="skill-progress-item">
-                <div class="skill-item-header">
-                  <span class="skill-name">Interactive Web &amp; 3D (React.js, Three.js, TypeScript)</span>
-                  <span class="skill-percent">86%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill skill-fill-gold" data-level="86" style="width: 86%;"></div>
-                </div>
-              </div>
-              <div class="skill-progress-item">
-                <div class="skill-item-header">
-                  <span class="skill-name">Backend APIs &amp; Game Engines (Flask, Node.js, Unity 3D)</span>
-                  <span class="skill-percent">85%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill skill-fill-gold" data-level="85" style="width: 85%;"></div>
-                </div>
-              </div>
-              <div class="skill-progress-item">
-                <div class="skill-item-header">
-                  <span class="skill-name">Hardware &amp; Cloud Acceleration (CUDA, cuDNN, RunPod.io)</span>
-                  <span class="skill-percent">90%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-fill skill-fill-gold" data-level="90" style="width: 90%;"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skill-tags-row">
-              <span class="stream-tag">Three.js</span>
-              <span class="stream-tag">React</span>
-              <span class="stream-tag">Unity 3D</span>
-              <span class="stream-tag">TypeScript</span>
-              <span class="stream-tag">CUDA</span>
-              <span class="stream-tag">RunPod.io</span>
-              <span class="stream-tag">Flask</span>
-              <span class="stream-tag">WebGL</span>
+            <div class="skills-chips-flow">
+              <span class="skill-chip">LayoutLMv3</span>
+              <span class="skill-chip">Qwen</span>
+              <span class="skill-chip">CVAT</span>
+              <span class="skill-chip">CUDA</span>
+              <span class="skill-chip">RunPod</span>
+              <span class="skill-chip">Model Training</span>
+              <span class="skill-chip">Dataset Engineering</span>
             </div>
           </div>
         </div>
@@ -1264,10 +1104,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
   <!-- Main portfolio script — must be type=module to use imports -->
-  <script type="module" src="main.js?v=21"></script>
+  <script type="module" src="main.js?v=22"></script>
 
   <!-- Portfolio Studio (Live In-Browser CMS & Editor) -->
-  <script type="module" src="editor.js?v=21"></script>
+  <script type="module" src="editor.js?v=22"></script>
 </body>
 
 </html>

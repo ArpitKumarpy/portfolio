@@ -173,60 +173,56 @@ export const DEFAULT_DATA = {
     titleMain: "TECHNICAL",
     titleGhost: "SKILLS",
     bio: "Specialized in Computer Vision, 3D Pose Estimation, Deep Learning, and Cloud GPU Workflows.",
-    metrics: [
-      { icon: "✦", val: "96%", lbl: "C1 Advanced (577/600)" },
-      { icon: "◈", val: "95%", lbl: "Pose Estimation & CV" },
-      { icon: "⚡", val: "CUDA", lbl: "GPU Accelerated" }
-    ],
     categories: [
       {
-        id: "skill-cat-lang",
-        category: "Language Proficiency",
-        badge: "C1 Advanced & Native",
-        icon: "🗣️",
+        id: "skill-group-aiml",
+        category: "AI / Machine Learning",
         items: [
-          { name: "English — British Council C1 Advanced (Score: 577/600)", level: 96 },
-          { name: "Hindi — Native Language (Full Bilingual Fluency)", level: 100 },
-          { name: "Technical Communication & Research Writing (Scopus IEEE Author)", level: 92 },
-          { name: "Programming Languages (Python 3.x, Java 17, TypeScript)", level: 94 }
-        ],
-        tags: ["British Council (577/600)", "C1 Advanced", "English (Fluent)", "Hindi (Native)", "Python 3.x", "Java 17", "Technical Writing", "IEEE Scopus Author"]
+          "PyTorch",
+          "TensorFlow",
+          "Hugging Face",
+          "XGBoost",
+          "NLP",
+          "LLM / VLM Fine-tuning"
+        ]
       },
       {
-        id: "skill-cat-cv",
-        category: "Computer Vision & Pose Estimation",
-        badge: "Core Speciality",
-        icon: "👁",
+        id: "skill-group-cv",
+        category: "Computer Vision",
         items: [
-          { name: "OpenCV, MediaPipe & BlazePose (3D Landmark Extraction)", level: 95 },
-          { name: "Object Detection & Segmentation (YOLOv8x, Detectron2)", level: 90 },
-          { name: "Dataset Annotation & Pipeline Tooling (CVAT)", level: 92 }
-        ],
-        tags: ["BlazePose", "MediaPipe", "OpenCV", "YOLOv8x", "Detectron2", "CVAT", "Markerless 3D MoCap"]
+          "OpenCV",
+          "MediaPipe",
+          "BlazePose",
+          "YOLO",
+          "Detectron2",
+          "OCR · Segmentation"
+        ]
       },
       {
-        id: "skill-cat-ml",
-        category: "AI, Machine Learning & VLMs",
-        badge: "Deep Learning",
-        icon: "⚡",
+        id: "skill-group-dev",
+        category: "Development",
         items: [
-          { name: "Deep Learning & NLP (PyTorch, TensorFlow 2.10, Scikit-Learn)", level: 92 },
-          { name: "Tree Ensembles & Tabular Modeling (XGBoost, GroupKFold)", level: 94 },
-          { name: "Vision-Language Models & Fine-Tuning (LayoutLMV3, QWEN3)", level: 88 }
-        ],
-        tags: ["Python", "PyTorch", "TensorFlow 2.10", "XGBoost", "LayoutLMV3", "QWEN3", "HuggingFace", "ZuCo Dataset", "Librosa"]
+          "Python",
+          "Java",
+          "TypeScript",
+          "React",
+          "Flask",
+          "Three.js",
+          "MySQL · Git"
+        ]
       },
       {
-        id: "skill-cat-fullstack",
-        category: "Creative Tech, 3D Web & Cloud Acceleration",
-        badge: "3D & Cloud",
-        icon: "🌐",
+        id: "skill-group-infra",
+        category: "Infrastructure",
         items: [
-          { name: "Interactive 3D WebGL (Three.js, React.js, TypeScript)", level: 90 },
-          { name: "Game Engines & MoCap Kinematics (Unity 3D, .BVH Solving)", level: 88 },
-          { name: "Hardware & Cloud Acceleration (CUDA, cuDNN, RunPod.io)", level: 90 }
-        ],
-        tags: ["Three.js", "React.js", "TypeScript", "Unity 3D", "Flask", "CUDA", "RunPod.io", "Java", "Python", "Git"]
+          "LayoutLMv3",
+          "Qwen",
+          "CVAT",
+          "CUDA",
+          "RunPod",
+          "Model Training",
+          "Dataset Engineering"
+        ]
       }
     ]
   },
@@ -405,7 +401,7 @@ export const DEFAULT_DATA = {
   customSections: {}
 };
 
-const PORTFOLIO_SCHEMA_VERSION = "12.0";
+const PORTFOLIO_SCHEMA_VERSION = "13.0";
 
 function loadPortfolioData() {
   try {

@@ -306,20 +306,20 @@ export function setupSkillsStreamInteractions() {
     });
   }
 
-  // Interactive Category Cards in Skills
-  const cats = [
-    { id: "skill-cat-lang", toast: "🗣️ Language Proficiency: English (British Council C1 577/600) & Hindi (Native)", speed: 3.5 },
-    { id: "skill-cat-cv", toast: "👁 Computer Vision: OpenCV, MediaPipe, BlazePose 3D & CVAT", speed: 3.5 },
-    { id: "skill-cat-ml", toast: "⚡ Deep Learning: PyTorch, TensorFlow, XGBoost & LayoutLMV3", speed: 3.2 },
-    { id: "skill-cat-fullstack", toast: "🌐 3D & Cloud: Three.js, React, Unity 3D & RunPod CUDA", speed: 3.0 }
+  // Interactive Curated Groups in Skills
+  const groups = [
+    { id: "skill-group-aiml", toast: "⚡ AI / ML: PyTorch, TensorFlow, Hugging Face, XGBoost & LLMs", speed: 3.5 },
+    { id: "skill-group-cv", toast: "👁 Computer Vision: OpenCV, MediaPipe, BlazePose, YOLO & Detectron2", speed: 3.5 },
+    { id: "skill-group-dev", toast: "💻 Development: Python, Java, TypeScript, React, Flask & Three.js", speed: 3.2 },
+    { id: "skill-group-infra", toast: "☁ Infrastructure: LayoutLMv3, Qwen, CVAT, CUDA & RunPod", speed: 3.0 }
   ];
 
-  cats.forEach(c => {
+  groups.forEach(c => {
     const el = document.getElementById(c.id);
     if (el) {
       el.addEventListener("click", () => {
         const rect = el.getBoundingClientRect();
-        spawnSparks(rect.left + rect.width / 2, rect.top + 30);
+        spawnSparks(rect.left + rect.width / 2, rect.top + 20);
         showBentoToast(c.toast);
         fxSpeeds.orbitalsSpeedMult = c.speed;
         setTimeout(() => { fxSpeeds.orbitalsSpeedMult = 1.0; }, 1400);
@@ -512,7 +512,7 @@ export function setupContactStreamInteractions() {
       } catch (err) {
         console.warn("Web3Forms submit error, offering instant mailto fallback:", err);
         const mailtoUrl = `mailto:arpitkumar.py@gmail.com?subject=${encodeURIComponent("[Portfolio] " + subject)}&body=${encodeURIComponent("From: " + name + " (" + email + ")\n\n" + message)}`;
-        
+
         if (statusMsg) {
           statusMsg.className = "form-status-msg warning";
           statusMsg.innerHTML = `Transmission issue: ${err.message || "Unable to send"}. <a class="form-fallback-link" href="${mailtoUrl}">Click here to send directly via mail client</a>`;

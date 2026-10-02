@@ -216,11 +216,15 @@ export const DEFAULT_DATA = {
         category: "Development",
         items: [
           "Python",
+          "Kotlin",
           "Java",
+          "Jetpack Compose",
+          "Android SDK",
           "TypeScript",
           "React",
           "Flask",
           "Three.js",
+          "Room SQLite",
           "MySQL · Git"
         ]
       },
@@ -414,7 +418,7 @@ export const DEFAULT_DATA = {
   customSections: {}
 };
 
-const PORTFOLIO_SCHEMA_VERSION = "15.0";
+const PORTFOLIO_SCHEMA_VERSION = "16.0";
 
 function loadPortfolioData() {
   try {

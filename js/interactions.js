@@ -317,7 +317,7 @@ export function setupSkillsStreamInteractions() {
   const groups = [
     { id: "skill-group-aiml", toast: "⚡ AI / ML: PyTorch, TensorFlow, Hugging Face, XGBoost & LLMs", speed: 3.5 },
     { id: "skill-group-cv", toast: "👁 Computer Vision: OpenCV, MediaPipe, BlazePose, YOLO & Detectron2", speed: 3.5 },
-    { id: "skill-group-dev", toast: "💻 Development: Python, Java, TypeScript, React, Flask & Three.js", speed: 3.2 },
+    { id: "skill-group-dev", toast: "💻 Development: Python, Kotlin, Java, Jetpack Compose, Android SDK, React & Three.js", speed: 3.2 },
     { id: "skill-group-infra", toast: "☁ Infrastructure: LayoutLMv3, Qwen, CVAT, CUDA & RunPod", speed: 3.0 }
   ];
 

@@ -315,6 +315,10 @@
   border-color: rgba(0, 240, 255, 0.45);
 }
 
+.project-thumb-green {
+  border-color: rgba(0, 245, 212, 0.45);
+}
+
 .thumb-mockup-screen {
   background: #0A0A10;
   border-radius: 12px;
@@ -344,6 +348,48 @@
 .dot-teal { background: #2EC4B6; }
 .dot-pink { background: #E8198B; }
 .dot-amber { background: #FFB830; }
+.dot-green { background: #00F5D4; }
+
+.mockup-tracker-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 54px;
+  margin: auto;
+}
+
+.tracker-slot-bar {
+  height: 5px;
+  background: rgba(0, 245, 212, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.tracker-slot-bar .slot-fill {
+  display: block;
+  width: 75%;
+  height: 100%;
+  background: linear-gradient(90deg, #00F5D4, #B4FF3B);
+  border-radius: 3px;
+}
+
+.tracker-metrics-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+.tracker-chip {
+  height: 12px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.42rem;
+  color: #00F5D4;
+}
 
 .mockup-title {
   font-family: 'Space Grotesk', sans-serif;

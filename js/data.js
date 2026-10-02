@@ -142,6 +142,19 @@ export const DEFAULT_DATA = {
         mockupHud: "3D MoCap · Three.js"
       },
       {
+        id: "proj-row-smarttracker",
+        title: "Smart Tracker — Personal Productivity & Wellness",
+        badge: "Android • Kotlin & Jetpack Compose",
+        desc: "All-in-one local-first Android productivity, health, and finance suite. Features intelligent automated schedule duration splitting, calorie & hydration tracking, double-entry financial accounting, and encrypted offline SQLite persistence via Room.",
+        tech: ["Kotlin", "Jetpack Compose", "Room SQLite", "Android SDK", "Clean Architecture", "Local-First"],
+        githubUrl: "https://github.com/ArpitKumarpy/Smart-Tracker",
+        deployedUrl: "",
+        link: "https://github.com/ArpitKumarpy/Smart-Tracker",
+        btnText: "Explore Smart Tracker ↗",
+        mockupTitle: "Smart Tracker",
+        mockupHud: "Android · Compose M3"
+      },
+      {
         id: "proj-row-emotion",
         title: "Multimodal Emotion Recognition System",
         badge: "Deep Learning • Audio / Vision / NLP",
@@ -401,7 +414,7 @@ export const DEFAULT_DATA = {
   customSections: {}
 };
 
-const PORTFOLIO_SCHEMA_VERSION = "14.0";
+const PORTFOLIO_SCHEMA_VERSION = "15.0";
 
 function loadPortfolioData() {
   try {

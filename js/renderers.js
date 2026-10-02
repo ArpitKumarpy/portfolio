@@ -179,6 +179,23 @@ export function renderProjectsStream() {
             <span class="vlm-box-highlight"></span>
           </div>
         `
+      },
+      {
+        theme: 'project-thumb-green',
+        dot: 'mockup-dot dot-green',
+        hud: 'Android · Compose M3',
+        visual: `
+          <div class="mockup-tracker-preview">
+            <div class="tracker-slot-bar">
+              <span class="slot-fill"></span>
+            </div>
+            <div class="tracker-metrics-row">
+              <span class="tracker-chip">⏱️ Slots</span>
+              <span class="tracker-chip">🔥 Cal</span>
+              <span class="tracker-chip">💰 Ledger</span>
+            </div>
+          </div>
+        `
       }
     ];
 
@@ -186,13 +203,20 @@ export function renderProjectsStream() {
       'proj-row-skybook': previews[2],
       'proj-row-synapse': previews[1],
       'proj-row-vidvision': previews[0],
+      'proj-row-smarttracker': previews[5],
       'proj-row-emotion': previews[3],
       'proj-row-vlm': previews[4]
     };
 
     list.innerHTML = items.map((p, idx) => {
       const cleanTitle = p.title.replace(/\s*—\s*Markerless Motion Capture/i, "");
-      const rowId = p.id || (cleanTitle.toLowerCase().includes("skybook") ? 'proj-row-skybook' : (cleanTitle.toLowerCase().includes("synapse") ? 'proj-row-synapse' : (cleanTitle.toLowerCase().includes("vidvision") ? 'proj-row-vidvision' : (cleanTitle.toLowerCase().includes("emotion") ? 'proj-row-emotion' : 'proj-row-vlm'))));
+      const rowId = p.id || (
+        cleanTitle.toLowerCase().includes("skybook") ? 'proj-row-skybook' :
+        cleanTitle.toLowerCase().includes("synapse") ? 'proj-row-synapse' :
+        cleanTitle.toLowerCase().includes("vidvision") ? 'proj-row-vidvision' :
+        cleanTitle.toLowerCase().includes("smart") || cleanTitle.toLowerCase().includes("tracker") ? 'proj-row-smarttracker' :
+        cleanTitle.toLowerCase().includes("emotion") ? 'proj-row-emotion' : 'proj-row-vlm'
+      );
       const pv = previewMap[rowId] || previews[idx % previews.length];
       const tagsList = (p.tech || p.tags || []).filter(t => t !== "TestTag1");
       const tagsHtml = tagsList.map(t => `<span class="stream-tag">${t}</span>`).join("");
@@ -443,9 +467,10 @@ function renderSection(sec) {
   }
 
   else if (sec === "projects") {
+    const pItems = Array.isArray(d.projects) ? d.projects : (d.projects && d.projects.items ? d.projects.items : []);
     el.innerHTML = `
       <div class="projects-grid">
-        ${(d.projects || []).map((p, i) => `
+        ${pItems.map((p, i) => `
           <div class="project-card" style="${delay(i, .05, .1)}">
             <div class="project-header">
               <div class="project-title">${p.title}</div>

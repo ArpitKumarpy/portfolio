@@ -161,6 +161,13 @@ export function setupProjectsStreamInteractions() {
         showBentoToast("✈️ SkyBook Flights: Airline Booking Platform — Opening repository...");
       }
       gsap.to(tLight, { intensity: 4.2, duration: 0.3, yoyo: true, repeat: 1 });
+    } else if (rowId === "proj-row-smarttracker") {
+      if (isLive) {
+        showBentoToast("🌐 Opening Smart Tracker Application...");
+      } else {
+        showBentoToast("📱 Smart Tracker: Android Productivity & Finance Suite (Kotlin & Compose)");
+      }
+      gsap.to(tLight, { intensity: 4.2, duration: 0.3, yoyo: true, repeat: 1 });
     } else if (rowId === "proj-row-emotion") {
       if (isLive) {
         showBentoToast("🌐 Opening Emotion AI Live Application...");

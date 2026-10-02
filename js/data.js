@@ -174,11 +174,24 @@ export const DEFAULT_DATA = {
     titleGhost: "SKILLS",
     bio: "Specialized in Computer Vision, 3D Pose Estimation, Deep Learning, and Cloud GPU Workflows.",
     metrics: [
-      { icon: "✦", val: "95%", lbl: "Pose Estimation & CV" },
-      { icon: "◈", val: "14+", lbl: "AI/CV & 3D Frameworks" },
+      { icon: "✦", val: "96%", lbl: "C1 Advanced (577/600)" },
+      { icon: "◈", val: "95%", lbl: "Pose Estimation & CV" },
       { icon: "⚡", val: "CUDA", lbl: "GPU Accelerated" }
     ],
     categories: [
+      {
+        id: "skill-cat-lang",
+        category: "Language Proficiency",
+        badge: "C1 Advanced & Native",
+        icon: "🗣️",
+        items: [
+          { name: "English — British Council C1 Advanced (Score: 577/600)", level: 96 },
+          { name: "Hindi — Native Language (Full Bilingual Fluency)", level: 100 },
+          { name: "Technical Communication & Research Writing (Scopus IEEE Author)", level: 92 },
+          { name: "Programming Languages (Python 3.x, Java 17, TypeScript)", level: 94 }
+        ],
+        tags: ["British Council (577/600)", "C1 Advanced", "English (Fluent)", "Hindi (Native)", "Python 3.x", "Java 17", "Technical Writing", "IEEE Scopus Author"]
+      },
       {
         id: "skill-cat-cv",
         category: "Computer Vision & Pose Estimation",
@@ -222,6 +235,20 @@ export const DEFAULT_DATA = {
     titleGhost: "EXPERIENCE",
     bio: "Track record across AI enterprise solutions, published Scopus research, patent inventions, and hackathons.",
     items: [
+      {
+        id: "exp-card-coforge",
+        role: "Engineer — Full Stack Developer",
+        company: "Coforge Ltd. — Greater Noida",
+        period: "May 2026 – Present",
+        badge: "Full-Time",
+        badgeClass: "exp-badge-fulltime",
+        points: [
+          "Joined as Engineer in May 2026; completed intensive engineering training in September 2026 and transitioned to full-time Engineer.",
+          "Architecting, developing, and maintaining high-performance full-stack web applications using React, Node.js, Express, and RESTful APIs.",
+          "Implementing scalable database models (MySQL, MongoDB, PostgreSQL) and driving code quality standards within Agile/Scrum sprint workflows."
+        ],
+        tags: ["Full-Time", "React", "Node.js", "Express", "REST APIs", "MySQL", "MongoDB", "Agile / Git"]
+      },
       {
         id: "exp-card-botter",
         role: "AI/LLM Solutions Developer",
@@ -378,7 +405,7 @@ export const DEFAULT_DATA = {
   customSections: {}
 };
 
-const PORTFOLIO_SCHEMA_VERSION = "10.0";
+const PORTFOLIO_SCHEMA_VERSION = "12.0";
 
 function loadPortfolioData() {
   try {

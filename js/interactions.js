@@ -308,6 +308,7 @@ export function setupSkillsStreamInteractions() {
 
   // Interactive Category Cards in Skills
   const cats = [
+    { id: "skill-cat-lang", toast: "🗣️ Language Proficiency: English (British Council C1 577/600) & Hindi (Native)", speed: 3.5 },
     { id: "skill-cat-cv", toast: "👁 Computer Vision: OpenCV, MediaPipe, BlazePose 3D & CVAT", speed: 3.5 },
     { id: "skill-cat-ml", toast: "⚡ Deep Learning: PyTorch, TensorFlow, XGBoost & LayoutLMV3", speed: 3.2 },
     { id: "skill-cat-fullstack", toast: "🌐 3D & Cloud: Three.js, React, Unity 3D & RunPod CUDA", speed: 3.0 }
@@ -354,6 +355,7 @@ export function setupExperienceStreamInteractions() {
   }
 
   const items = [
+    { id: "exp-card-coforge", toast: "💼 Coforge Ltd: Engineer — Full Stack Developer (Greater Noida)" },
     { id: "exp-card-botter", toast: "💼 Botter Solutions: LayoutLMV3, QWEN3, vLLM & Cloud GPU on RunPod.io" },
     { id: "exp-card-draftine", toast: "🏢 DrafTineAI: Complex CVAT Annotation, Detectron2 & YOLOv8x" },
     { id: "exp-card-ieee", toast: "📜 Synapse Research: IEEE NMIC 2026 Scopus (0.9989 AUC Gaze Model)" },

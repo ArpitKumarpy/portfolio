@@ -18,12 +18,14 @@ export const POKE_QUOTES = {
     "*training custom CNNs on RunPod*"
   ],
   skills: [
+    "🗣️ British Council C1 (577/600) & Bilingual! 🗣️",
     "⚡ PyTorch & CUDA acceleration active ⚡",
-    "⚡ 94% Computer Vision & Pose Tracking ⚡",
+    "⚡ 95% Computer Vision & Pose Tracking ⚡",
     "⚡ LayoutLMV3, QWEN3 & Vision-Language ⚡",
     "⚡ Three.js + WebGL rendering smoothly ⚡"
   ],
   experience: [
+    "💼 Coforge: Engineer — Full Stack Developer 💼",
     "💼 Scopus IEEE Xplore NMIC 2026 Co-Author 💼",
     "💼 Patent App: Virtual Body Augmented AI 💼",
     "💼 Smart India Hackathon & Vihaan Finalist 💼",

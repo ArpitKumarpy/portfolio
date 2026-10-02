@@ -292,6 +292,12 @@
   letter-spacing: 0.04em;
 }
 
+.exp-badge-fulltime {
+  background: rgba(0, 245, 212, 0.12);
+  border: 1px solid rgba(0, 245, 212, 0.35);
+  color: #00F5D4;
+}
+
 .exp-badge-industry {
   background: rgba(255, 184, 48, 0.12);
   border: 1px solid rgba(255, 184, 48, 0.35);

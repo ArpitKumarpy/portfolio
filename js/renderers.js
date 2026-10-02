@@ -473,7 +473,7 @@ function renderSection(sec) {
     let animIdx = 0;
     el.innerHTML = `
       <div class="skills-categories">
-        ${(d.skills || []).map((cat) => `
+        ${(Array.isArray(d.skills) ? d.skills : (d.skills && d.skills.categories ? d.skills.categories : [])).map((cat) => `
           <div class="skill-category">
             <div class="skill-cat-title">&gt; ${cat.category}</div>
             <div class="skills-list">

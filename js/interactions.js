@@ -57,6 +57,7 @@ import {
   restoreDefaultCharacterState,
   showBentoToast
 } from "./sections.js";
+import { openResumePdfViewer } from "./ui.js";
 
 const pContainer = document.getElementById("particle-container");
 const SPARKS = ["✦", "★", "✧", "·", "✸", "✶"];
@@ -269,10 +270,13 @@ export function setupAboutBentoInteractions() {
   if (projectCard) {
     projectCard.addEventListener("click", (e) => {
       const isLinkClick = e.target.closest("a");
-      const dest = projectCard.dataset.link || (DATA.about && DATA.about.bentoCards && DATA.about.bentoCards[3] && DATA.about.bentoCards[3].link) || "https://skybook-flights.onrender.com";
+      const bentoCardData = DATA.about && DATA.about.bentoCards && DATA.about.bentoCards[3];
+      const dest = projectCard.dataset.link || (bentoCardData && bentoCardData.link) || "https://vid-vision3-d1.vercel.app/";
+      const cardTitle = (bentoCardData && bentoCardData.title) || "VidVision3D";
+      const cardSub = (bentoCardData && bentoCardData.subtitle) || "Markerless 3D Motion Capture";
       const rect = projectCard.getBoundingClientRect();
       spawnSparks(rect.left + rect.width / 2, rect.top + 30);
-      showBentoToast("✈️ SkyBook Flights: Airline Booking & Fleet Platform — Opening live app...");
+      showBentoToast(`⚡ ${cardTitle}: ${cardSub} — Opening live demo...`);
       if (projectsScanner) {
         projectsScanner.visible = true;
         gsap.killTweensOf(projectsScanner.scale);
@@ -428,6 +432,22 @@ export function setupContactStreamInteractions() {
       });
     }
   });
+
+  // Resume Viewer Trigger in Contact Top Action Bar
+  const resumeBtn = document.getElementById("contact-resume-viewer-trigger");
+  if (resumeBtn) {
+    resumeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const rect = resumeBtn.getBoundingClientRect();
+      spawnSparks(rect.left + rect.width / 2, rect.top + 15);
+      showBentoToast("📄 Opening Resume / CV...");
+      if (typeof openResumePdfViewer === "function") {
+        openResumePdfViewer("./assets/resume.pdf");
+      } else {
+        window.open("./assets/resume.pdf", "_blank");
+      }
+    });
+  }
 
   // Direct Connect Transmission Form
   const form = document.getElementById("contact-direct-form");

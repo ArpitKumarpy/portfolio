@@ -5,9 +5,9 @@
 
 export const DEFAULT_DATA = {
   name: "Arpit Kumar",
-  pageTitle: "Arpit Kumar — Creative Technologist & AI/ML Engineer",
+  pageTitle: "Arpit Kumar — AI & Computer Vision Engineer",
   nameTitleSrc: "./assets/nametitle.png",
-  tagline: "Creative Technologist & AI/ML Engineer · 3D Motion, Computer Vision & Multimodal Systems",
+  tagline: "AI & Computer Vision Engineer · Interactive Systems, 3D Kinematics & Multimodal AI",
   sections: [
     { id: "about", label: "About", icon: "✦" },
     { id: "projects", label: "Projects", icon: "◈" },
@@ -26,8 +26,8 @@ export const DEFAULT_DATA = {
   about: {
     titleMain: "ABOUT",
     titleGhost: "ME",
-    intro: "I’m a Computer Science engineer focused on AI, computer vision, and intelligent interactive systems.",
-    bio: `<p class="about-bio-p">I’m a Computer Science engineer focused on <strong class="bio-highlight bio-highlight-cyan"><span class="bio-sparkle">✦</span> AI, computer vision, and intelligent interactive systems</strong>.</p>\n<p class="about-bio-p">I enjoy taking problems that sit somewhere between research and real-world use and turning them into things people can actually interact with. My work has ranged from <strong class="bio-highlight bio-highlight-gradient">computer vision and markerless motion capture to multimodal AI, OCR, and vision-language models</strong>—often involving the full journey from dataset preparation and model training to the final product.</p>\n<p class="about-bio-p">What interests me most is the space where <strong class="bio-highlight bio-highlight-magenta"><span class="bio-sparkle">✦</span> AI meets creativity and human interaction</strong>. I like building systems that don't just demonstrate a model, but give that model a purpose—whether that's making reading more accessible, reducing the cost of motion capture, or exploring new ways for people to interact with technology.</p>\n<p class="about-bio-p about-bio-footer">I’m still learning, experimenting, and occasionally breaking things along the way. That’s probably the part I enjoy most.</p>`,
+    intro: "I’m an AI and Computer Vision engineer focused on building intelligent interactive systems that connect machine learning with the physical and visual world.",
+    bio: `<p class="about-bio-p">I’m an <strong class="bio-highlight bio-highlight-cyan"><span class="bio-sparkle">✦</span> AI and Computer Vision engineer</strong> focused on building intelligent interactive systems that connect machine learning with the physical and visual world.</p>\n<p class="about-bio-p">I enjoy taking problems that sit somewhere between research and real-world use and turning them into things people can actually interact with. My work has ranged from <strong class="bio-highlight bio-highlight-gradient">computer vision and markerless motion capture to multimodal AI, OCR, and vision-language models</strong>—often involving the full journey from dataset preparation and model training to the final product.</p>\n<p class="about-bio-p">What interests me most is the space where <strong class="bio-highlight bio-highlight-magenta"><span class="bio-sparkle">✦</span> AI meets creativity and human interaction</strong>. I like building systems that don't just demonstrate a model, but give that model a purpose—whether that's making reading more accessible, reducing the cost of motion capture, or exploring new ways for people to interact with technology.</p>\n<p class="about-bio-p about-bio-footer">I’m still learning, experimenting, and occasionally breaking things along the way. That’s probably the part I enjoy most.</p>`,
     bentoCards: [
       {
         id: "bento-card-education",
@@ -55,12 +55,12 @@ export const DEFAULT_DATA = {
       },
       {
         id: "bento-card-creative",
-        badge: "LATEST PROJECT",
-        title: "SkyBook",
-        subtitle: "Complex Airline Booking & Flight Management System",
-        tag: "Live Demo ↗",
-        icon: "🚀",
-        link: "https://skybook-flights.onrender.com"
+        badge: "HERO FLAGSHIP",
+        title: "VidVision3D",
+        subtitle: "Markerless 3D Motion Capture & Kinematics Studio",
+        tag: "Live MoCap ↗",
+        icon: "⚡",
+        link: "https://vid-vision3-d1.vercel.app/"
       }
     ],
     summaryBullets: [
@@ -78,7 +78,7 @@ export const DEFAULT_DATA = {
       "Led teams across 7 national hackathons (Smart India Hackathon 2024 & Vihaan 8.0 DTU Finalist)."
     ],
     highlights: [
-      { label: "Creative AI", val: "VidVision3D — 80% Cost Reduction MoCap & Puppet Studio" },
+      { label: "Flagship AI", val: "VidVision3D — 80% Cost Reduction MoCap & Kinetic Studio" },
       { label: "Research", val: "Scopus IEEE Xplore NMIC 2026 Co-Author (Synapse)" },
       { label: "Patent", val: "Virtual Body Augmented with AI (App: 202211074491)" },
       { label: "Academics", val: "B.Tech CSE (AI/ML) + IIT Madras Online BS Data Science" }
@@ -100,13 +100,39 @@ export const DEFAULT_DATA = {
   projects: {
     titleMain: "FEATURED",
     titleGhost: "PROJECTS",
-    bio: "Markerless 3D motion capture, assistive eye tracking, full-stack airline systems, multimodal emotion AI, and Vision-Language pipelines.",
+    bio: "Markerless 3D motion capture, assistive eye tracking, production flight platforms, multimodal emotion AI, and Vision-Language models.",
     items: [
+      {
+        id: "proj-row-vidvision",
+        title: "VidVision3D — Markerless Motion Capture",
+        badge: "Hero • 3D MoCap & Kinematics",
+        desc: "<strong>Problem:</strong> Traditional MoCap demands multi-camera optical studios and costly sensor suits.<br><strong>System:</strong> Client-side platform converting monocular webcam feeds into animatable 3D skeletal armatures (.BVH export for Blender/Unity) & 2D puppet rigs.<br><strong>Contribution & Result:</strong> Built real-time BlazePose-to-Three.js kinematic retargeting and mathematical BVH joint serializer—cutting 3D animation turnaround and costs by 80% with zero cloud dependencies.",
+        tech: ["Three.js", "BlazePose", "MediaPipe", "BVH Export", "React", "TypeScript", "Python", "Kinematics"],
+        githubUrl: "https://github.com/ArpitKumarpy/VidVision3D1",
+        deployedUrl: "https://vid-vision3-d1.vercel.app/",
+        link: "https://vid-vision3-d1.vercel.app/",
+        btnText: "Explore VidVision3D ↗",
+        mockupTitle: "VidVision3D",
+        mockupHud: "3D MoCap · Three.js"
+      },
+      {
+        id: "proj-row-synapse",
+        title: "Synapse: Multimodal Assistive Reading System",
+        badge: "IEEE Xplore Scopus 2026",
+        desc: "<strong>Problem:</strong> Assistive reading tools fail to detect real-time cognitive difficulty and reading fatigue in neurodivergent users.<br><strong>System:</strong> Privacy-first, browser-native assistive platform fusing gaze tracking with adaptive typographic scaffolding and TTS.<br><strong>Contribution & Result:</strong> Engineered the MediaPipe iris tracking pipeline, extracted behavioral gaze features from the ZuCo benchmark, and trained an XGBoost classifier achieving <strong>0.9989 AUC</strong> for cognitive difficulty prediction.",
+        tech: ["Eye Tracking", "XGBoost", "IEEE Xplore", "MediaPipe", "ZuCo Benchmark", "React", "TypeScript"],
+        githubUrl: "https://github.com/ArpitKumarpy/Dyslexia",
+        deployedUrl: "https://dyslexia-alpha.vercel.app/",
+        link: "https://dyslexia-alpha.vercel.app/",
+        btnText: "Explore Synapse ↗",
+        mockupTitle: "Synapse AI",
+        mockupHud: "0.9989 AUC · Eye Tracking"
+      },
       {
         id: "proj-row-skybook",
         title: "SkyBook — Airline Booking & Fleet Platform",
-        badge: "Full-Stack • React & Cloud Architecture",
-        desc: "End-to-end airline booking and fleet management system featuring real-time flight search, interactive aircraft seat selection, passenger ticketing with PDF generation, and full administrative CRUD control across fleets, cabins, and schedules.",
+        badge: "Production Systems • Full-Stack",
+        desc: "<strong>Problem:</strong> Airline booking platforms demand robust concurrent seating, instant ticketing, and granular fleet administration.<br><strong>System:</strong> High-performance full-stack flight operations platform with live route search, seat matrix allocation, and ticketing workflows.<br><strong>Contribution & Result:</strong> Designed end-to-end REST APIs, client transactional state management, dynamic aircraft cabin matrices, and automated PDF boarding pass generation.",
         tech: ["React", "JavaScript", "Vite", "Node.js", "REST APIs", "TailwindCSS", "State Management"],
         githubUrl: "https://github.com/ArpitKumarpy/Skybook_Flights",
         deployedUrl: "https://skybook-flights.onrender.com",
@@ -116,36 +142,10 @@ export const DEFAULT_DATA = {
         mockupHud: "Flights · Seat Matrix"
       },
       {
-        id: "proj-row-synapse",
-        title: "Synapse: Multimodal Assistive Reading System",
-        badge: "IEEE Xplore Scopus 2026",
-        desc: "Co-authored privacy-first, browser-native assistive reading platform for dyslexic users. Features real-time iris tracking via MediaPipe, an XGBoost cognitive difficulty prediction model trained on the ZuCo dataset (0.9989 AUC via behavioral gaze features), dynamic typographic scaffolding, and text-to-speech within a unified React/TypeScript architecture.",
-        tech: ["Eye Tracking", "XGBoost", "IEEE Xplore", "ZuCo Dataset", "MediaPipe", "React", "TypeScript"],
-        githubUrl: "https://github.com/ArpitKumarpy/Dyslexia",
-        deployedUrl: "https://dyslexia-alpha.vercel.app/",
-        link: "https://dyslexia-alpha.vercel.app/",
-        btnText: "Explore Synapse ↗",
-        mockupTitle: "Synapse AI",
-        mockupHud: "0.9989 AUC · Eye Tracking"
-      },
-      {
-        id: "proj-row-vidvision",
-        title: "VidVision3D — Markerless Motion Capture",
-        badge: "Featured • 3D MoCap & Kinematics",
-        desc: "Client-side motion capture and animation platform converting monocular video and webcam streams into interactive 3D skeletal armatures (.BVH export for Blender/Unity/Unreal) and 2D kinematic puppet rigs. Engineered with Three.js, BlazePose, and React, eliminating cloud dependencies and cutting animation costs by 80% for indie creators.",
-        tech: ["BlazePose", "MediaPipe", "Three.js", "React", "TypeScript", "Unity 3D", "Python", "BVH Export"],
-        githubUrl: "https://github.com/ArpitKumarpy/VidVision3D1",
-        deployedUrl: "https://vid-vision3-d1.vercel.app/",
-        link: "https://vid-vision3-d1.vercel.app/",
-        btnText: "Explore VidVision3D ↗",
-        mockupTitle: "VidVision3D",
-        mockupHud: "3D MoCap · Three.js"
-      },
-      {
         id: "proj-row-smarttracker",
         title: "Smart Tracker — Personal Productivity & Wellness",
         badge: "Android • Kotlin & Jetpack Compose",
-        desc: "All-in-one local-first Android productivity, health, and finance suite. Features intelligent automated schedule duration splitting, calorie & hydration tracking, double-entry financial accounting, and encrypted offline SQLite persistence via Room.",
+        desc: "<strong>Problem:</strong> Fragmented apps for routines, nutrition, and finance compromise user privacy with unencrypted cloud tracking.<br><strong>System:</strong> Local-first Android suite with automated schedule duration splitting, calorie & hydration logging, and double-entry accounting.<br><strong>Contribution & Result:</strong> Architected Clean Architecture MVVM layers, reactive Jetpack Compose UI, and zero-leak offline persistence via encrypted Room SQLite.",
         tech: ["Kotlin", "Jetpack Compose", "Room SQLite", "Android SDK", "Clean Architecture", "Local-First"],
         githubUrl: "https://github.com/ArpitKumarpy/Smart-Tracker",
         deployedUrl: "",
@@ -158,7 +158,7 @@ export const DEFAULT_DATA = {
         id: "proj-row-emotion",
         title: "Multimodal Emotion Recognition System",
         badge: "Deep Learning • Audio / Vision / NLP",
-        desc: "Real-time AI system detecting human emotions by fusing voice, facial expressions, and textual signals. Trained a custom CNN on the RAVDESS dataset with Librosa MFCC and spectral features on TensorFlow 2.10 (CUDA 11.2/cuDNN 8.1), fusing Wav2Vec2, DeepFace, OpenCV, and Transformers into a GPU-accelerated low-latency pipeline.",
+        desc: "<strong>Problem:</strong> Unimodal sentiment models fail when interpreting subtle sarcasm, voice inflections, or mixed facial expressions.<br><strong>System:</strong> Low-latency GPU inference pipeline fusing acoustic pitch, facial action units, and semantic textual embeddings.<br><strong>Contribution & Result:</strong> Trained CNNs on RAVDESS with Librosa MFCC acoustic extraction on TensorFlow/CUDA, fusing Wav2Vec2, DeepFace, and Transformers for robust multimodal inference.",
         tech: ["TensorFlow 2.10", "PyTorch", "Wav2Vec2", "DeepFace", "OpenCV", "Librosa", "CUDA"],
         githubUrl: "https://github.com/ArpitKumarpy",
         deployedUrl: "",
@@ -167,78 +167,50 @@ export const DEFAULT_DATA = {
         mockupTitle: "Emotion AI",
         mockupHud: "Voice + Vision + NLP"
       }
-      /*{
-        id: "proj-row-vlm",
-        title: "Vision-Language Document Intelligence",
-        badge: "Industry • LLMs & VLMs",
-        desc: "Research and evaluation pipeline for multimodal Vision-Language Models and document intelligence (LayoutLMV3, QWEN3, CascadeTabNet, TableLLM, PaddleOCR-VL). Curated high-precision architectural and tabular datasets using CVAT, and managed distributed cloud GPU training clusters on RunPod.io.",
-        tech: ["VLMs", "LayoutLMV3", "QWEN3", "RunPod.io", "CVAT", "PaddleOCR-VL", "Detectron2"],
-        githubUrl: "https://github.com/ArpitKumarpy/PDFentities",
-        deployedUrl: "",
-        link: "https://github.com/ArpitKumarpy/PDFentities",
-        btnText: "Explore Document AI ↗",
-        mockupTitle: "Document AI",
-        mockupHud: "LayoutLMV3 · QWEN3"
-      }*/
     ]
   },
   skills: {
     titleMain: "TECHNICAL",
     titleGhost: "SKILLS",
-    bio: "Specialized in Computer Vision, 3D Pose Estimation, Deep Learning, and Cloud GPU Workflows.",
+    bio: "Structured across core AI/CV depth, production engineering systems, and frontier research exploration.",
     categories: [
       {
-        id: "skill-group-aiml",
-        category: "AI / Machine Learning",
-        items: [
-          "PyTorch",
-          "TensorFlow",
-          "Hugging Face",
-          "XGBoost",
-          "NLP",
-          "LLM / VLM Fine-tuning"
-        ]
-      },
-      {
-        id: "skill-group-cv",
-        category: "Computer Vision",
-        items: [
-          "OpenCV",
-          "MediaPipe",
-          "BlazePose",
-          "YOLO",
-          "Detectron2",
-          "OCR · Segmentation"
-        ]
-      },
-      {
-        id: "skill-group-dev",
-        category: "Development",
+        id: "skill-group-core",
+        category: "Core AI & Computer Vision",
         items: [
           "Python",
-          "Kotlin",
-          "Java",
-          "Jetpack Compose",
-          "Android SDK",
-          "TypeScript",
-          "React",
-          "Flask",
-          "Three.js",
-          "Room SQLite",
-          "MySQL · Git"
+          "Computer Vision (OpenCV)",
+          "MediaPipe & BlazePose",
+          "PyTorch & TensorFlow",
+          "Deep Learning",
+          "3D Kinematics & MoCap",
+          "XGBoost",
+          "ML Pipeline Architecture"
         ]
       },
       {
-        id: "skill-group-infra",
-        category: "Infrastructure",
+        id: "skill-group-systems",
+        category: "Production Systems & Engineering",
         items: [
-          "LayoutLMv3",
-          "Qwen",
-          "CVAT",
-          "CUDA",
-          "RunPod",
-          "Model Training",
-          "Dataset Engineering"
+          "React & TypeScript",
+          "Android (Kotlin · Jetpack Compose)",
+          "FastAPI & Node.js",
+          "Three.js & WebGL",
+          "Room SQLite & PostgreSQL",
+          "REST APIs & State Management",
+          "Docker & Git"
+        ]
+      },
+      {
+        id: "skill-group-research",
+        category: "Research, VLMs & Cloud GPUs",
+        items: [
+          "VLMs (LayoutLMv3, Qwen)",
+          "Cloud GPUs (CUDA, RunPod.io)",
+          "CVAT Dataset Annotation",
+          "Multimodal Audio/Vision Fusion",
+          "ZuCo Gaze Benchmarks",
+          "LLM Fine-tuning"
         ]
       }
     ]
@@ -340,11 +312,16 @@ export const DEFAULT_DATA = {
   contact: {
     titleMain: "GET IN",
     titleGhost: "TOUCH",
-    bio: "Always open to discussing Computer Vision pipelines, 3D interactive graphics, and deep learning research collaborations.",
+    bio: "Always open to discussing Computer Vision pipelines, 3D interactive graphics, research collaborations, and engineering roles.",
     intro: "Always open to discussing Computer Vision, 3D interactive graphics, and deep learning systems. Connect with me directly:",
+    resume: {
+      label: "View Resume / CV",
+      href: "./assets/resume.pdf",
+      badge: "PDF ↗"
+    },
     status: {
       liveText: "Open for Opportunities",
-      details: "Available for AI/ML, Computer Vision & Creative Technology roles, research collaborations, or engineering projects. Typical response within 24 hours."
+      details: "Available for AI & Computer Vision engineering roles, 3D interactive graphics, research collaborations, and ambitious builds. Feel free to reach out directly."
     },
     form: {
       badge: "⚡ DIRECT TRANSMISSION",
@@ -418,7 +395,7 @@ export const DEFAULT_DATA = {
   customSections: {}
 };
 
-const PORTFOLIO_SCHEMA_VERSION = "16.0";
+const PORTFOLIO_SCHEMA_VERSION = "18.0";
 
 function loadPortfolioData() {
   try {

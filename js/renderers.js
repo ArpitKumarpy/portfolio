@@ -385,6 +385,11 @@ export function renderContactStream() {
     if (details && ct.status.details) details.textContent = ct.status.details;
   }
 
+  const resumeBtn = container.querySelector(".contact-resume-btn");
+  if (resumeBtn && ct.resume && ct.resume.href) {
+    resumeBtn.href = ct.resume.href;
+  }
+
   if (ct.form) {
     const badge = container.querySelector(".connect-form-badge");
     if (badge && ct.form.badge) badge.textContent = ct.form.badge;

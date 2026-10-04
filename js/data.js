@@ -55,7 +55,7 @@ export const DEFAULT_DATA = {
       },
       {
         id: "bento-card-creative",
-        badge: "HERO FLAGSHIP",
+        badge: "FEATURED PROJECT",
         title: "VidVision3D",
         subtitle: "Markerless 3D Motion Capture & Kinematics Studio",
         tag: "Live MoCap ↗",

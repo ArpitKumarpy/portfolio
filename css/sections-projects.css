@@ -145,8 +145,8 @@
   visibility: hidden;
   transform: translateX(45px);
   transition: opacity 0.42s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.42s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.42s;
+    transform 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.42s;
   display: flex;
   flex-direction: column;
 }
@@ -345,10 +345,21 @@
   background: #A855F7;
 }
 
-.dot-teal { background: #2EC4B6; }
-.dot-pink { background: #E8198B; }
-.dot-amber { background: #FFB830; }
-.dot-green { background: #00F5D4; }
+.dot-teal {
+  background: #2EC4B6;
+}
+
+.dot-pink {
+  background: #E8198B;
+}
+
+.dot-amber {
+  background: #FFB830;
+}
+
+.dot-green {
+  background: #00F5D4;
+}
 
 .mockup-tracker-preview {
   display: flex;
@@ -704,9 +715,20 @@
 }
 
 @keyframes pulse-live {
-  0% { transform: scale(0.85); opacity: 0.7; }
-  50% { transform: scale(1.25); opacity: 1; }
-  100% { transform: scale(0.85); opacity: 0.7; }
+  0% {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
 }
 
 .project-stream-arrow {
@@ -763,9 +785,17 @@
   background: rgba(46, 196, 182, 0.4);
 }
 
-.dl-1 { width: 90%; }
-.dl-2 { width: 75%; }
-.dl-3 { width: 85%; }
+.dl-1 {
+  width: 90%;
+}
+
+.dl-2 {
+  width: 75%;
+}
+
+.dl-3 {
+  width: 85%;
+}
 
 .mockup-hud-pill {
   font-family: 'Space Grotesk', sans-serif;
@@ -797,15 +827,39 @@
   animation: wave-bounce 1.2s infinite ease-in-out alternate;
 }
 
-.wb-1 { height: 10px; animation-delay: 0s; }
-.wb-2 { height: 18px; animation-delay: 0.2s; }
-.wb-3 { height: 24px; animation-delay: 0.4s; }
-.wb-4 { height: 14px; animation-delay: 0.6s; }
-.wb-5 { height: 8px; animation-delay: 0.8s; }
+.wb-1 {
+  height: 10px;
+  animation-delay: 0s;
+}
+
+.wb-2 {
+  height: 18px;
+  animation-delay: 0.2s;
+}
+
+.wb-3 {
+  height: 24px;
+  animation-delay: 0.4s;
+}
+
+.wb-4 {
+  height: 14px;
+  animation-delay: 0.6s;
+}
+
+.wb-5 {
+  height: 8px;
+  animation-delay: 0.8s;
+}
 
 @keyframes wave-bounce {
-  from { transform: scaleY(0.4); }
-  to { transform: scaleY(1); }
+  from {
+    transform: scaleY(0.4);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
 }
 
 /* VLM Mockup Grid */
@@ -831,6 +885,7 @@
 
 /* Fixed Dock & Controls When ANY Section Stream is Open */
 @media (min-width: 821px) {
+
   body.about-open #floating-nav,
   body.projects-open #floating-nav,
   body.skills-open #floating-nav,

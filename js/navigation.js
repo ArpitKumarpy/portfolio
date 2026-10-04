@@ -41,7 +41,7 @@ export function navigateConsecutiveSection(targetIndex, initialScroll = "top") {
   });
 
   if (navigator.vibrate) {
-    try { navigator.vibrate(30); } catch (_) {}
+    try { navigator.vibrate(30); } catch (_) { }
   }
 
   setTimeout(() => {

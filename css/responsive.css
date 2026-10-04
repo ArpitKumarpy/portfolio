@@ -82,11 +82,12 @@
     bottom: calc(max(env(safe-area-inset-bottom, 12px), 12px) + 52px) !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
+    padding: 5px 14px !important;
     z-index: 4;
   }
 
   .hint-text {
-    font-size: 0.88rem !important;
+    font-size: 0.96rem !important;
     letter-spacing: 0.04em;
   }
 

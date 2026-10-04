@@ -82,7 +82,6 @@
     bottom: calc(max(env(safe-area-inset-bottom, 12px), 12px) + 52px) !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-    padding: 5px 14px !important;
     z-index: 4;
   }
 

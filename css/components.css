@@ -72,13 +72,6 @@
   gap: 4px;
   pointer-events: none;
   transition: opacity 0.5s ease, transform 0.5s ease;
-  padding: 6px 18px;
-  border-radius: 999px;
-  background: rgba(10, 12, 20, 0.55);
-  border: 1px solid rgba(0, 245, 212, 0.28);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45), 0 0 16px rgba(0, 245, 212, 0.12);
 }
 
 #click-hint.hidden {

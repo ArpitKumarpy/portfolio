@@ -141,7 +141,7 @@ window.addEventListener("resize", handleWindowResize);
 // Touch detection — adapt hint text
 if (window.matchMedia("(pointer: coarse)").matches || 'ontouchstart' in window) {
   const hintText = document.querySelector(".hint-text");
-  if (hintText) hintText.textContent = "drag to rotate ✦ tap to poke";
+  if (hintText) hintText.textContent = "drag to rotate ✦ poke to interact";
 }
 
 // Canvas & Pointer Interactions
